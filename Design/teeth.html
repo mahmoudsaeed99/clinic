@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body style="background-color: rgb(246, 246, 246);">
+
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: violet;">
+        <a class="navbar-brand" href="#">DashBoard</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="operation.html">operations <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="patient name">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="container-fluid mt-2 ">
+        <div class="row ">
+            <div class="col-md-1"></div>
+            <div class="col-md-2">
+                <nav class="navbar navbar-light bg-light">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="profile.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="teeth.html">teeth</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="images.html">images</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="btn btn-primary w-100 " id="operation"> operation</button>
+                <div class="operator" style="display: none;">
+                    <table class="table table-striped table-inverse table-responsive">
+                        <thead class="thead-inverse">
+                            <tr>
+                                <th>service</th>
+                                <th>price</th>
+                                <th>add</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <form method="post" action="">
+                                    <td scope="row">حشو عصب </td>
+                                    <td>300</td>
+                                    <td><button class="fas fa-plus ml-3" type="submit"></button></td>
+                                </form>
+                            </tr>
+                            <tr>
+                                <form method="post">
+                                    <td scope="row">حشو عصب </td>
+                                    <td>300</td>
+                                    <td><button class="fas fa-plus ml-3" type="submit"></button></td>
+                                </form>
+                            </tr>
+                            <tr>
+                                <form method="post">
+                                    <td scope="row">حشو عصب </td>
+                                    <td>300</td>
+                                    <td><button class="fas fa-plus ml-3" type="submit"></button></td>
+                                </form>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button class="btn btn-primary w-100 mt-2" id="book"> booking</button>
+                <form class="book" style="display: none;" method="GET" action="login.html">
+                    <input type="date" class="date mt-1">
+                    <input type="time" class="time mt-1">
+                    <button class="fas fa-plus ml-3" type="submit"></button>
+                </form>
+            </div>
+            <div class="col-md-8">
+                <div class="row " style="background-color: teal;">
+                    <div class="col-md-3">
+                        <img src="images/—Pngtree—baby teeth_3355819.png" class="w-50">
+                    </div>
+                    <div class="col-md-9 mt-5" style="color: white;">
+                        <div class="row mb-3">
+
+                            <label for="" class="col-md-1">Name:</label>
+                            <label for="" class="col-md-5">Mahmoud saeed</label>
+                            <label for="" class="col-md-1">age:</label>
+                            <label for="" class="col-md-5">21</label>
+                            <label for="" class="col-md-2">Address :</label>
+                            <label for="" class="col-md-4">Cairo</label>
+                            <label for="" class="col-md-1">mobile:</label>
+                            <label for="" class="col-md-5">01113936587</label>
+                            <label for="" class="col-md-2">pb1 :</label>
+                            <label for="" class="col-md-4">yes</label>
+                            <label for="" class="col-md-1">pb2 :</label>
+                            <label for="" class="col-md-5">no</label>
+                            <label for="" class="col-md-2">pb3 :</label>
+                            <label for="" class="col-md-4">no</label>
+                            <label for="" class="col-md-1">pb4 :</label>
+                            <label for="" class="col-md-5">yes</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="colorList col-md-12 mt-3 row">
+                    <div class="d-flex justify-content-center m-2"
+                        style=" width: 100px; background-color: #f8b6a8; height: 25px; color: white;">Restoration 1</div>
+                    <div class="d-flex justify-content-center m-2"
+                        style=" width: 100px;background-color: yellow; height: 25px; color: black;">Veneer 2</div>
+                    <div class="d-flex justify-content-center m-2"
+                        style=" width: 100px;background-color: #a7e8c8; height: 25px; color: white;">Crown 3</div>
+                    <div class="d-flex justify-content-center m-2"
+                        style=" width: 100px;background-color: #00d2ff; height: 25px; color: white;">Abutment 4</div>
+                    <div class="d-flex justify-content-center m-2"
+                        style=" width: 100px;background-color: #000232; height: 25px; color: white;">Pontic 5</div>
+                    <div class="d-flex justify-content-center m-2"
+                        style=" width: 100px;background-color: #e69f31; height: 25px; color: white;">Implant 6</div>
+                    <div class="d-flex justify-content-center m-2"
+                        style=" width: 100px;background-color: #0bcd74; height: 25px; color: white;">R.C.T 7</div>
+                    <div class="d-flex justify-content-center m-2"
+                        style=" width: 100px;background-color:#620062; height: 25px; color: white;">Abscess 8</div>
+                    <div class="d-flex justify-content-center m-2"
+                        style=" width: 100px;background-color:#e69f31; height: 25px; color: white;">Apicectomy 9</div>
+                    <div class="d-flex justify-content-center m-2"
+                        style=" width: 100px;background-color:#abacab; height: 25px; color: white;">Impacted 10</div>
+                    <div class="d-flex justify-content-center m-2"
+                        style=" width: 100px;background-color:#FF1493; height: 25px; color: white;">Extraction 11</div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <div class="container-fluid mt-3">
+        <form method="GET" class="container-fluid teethOperator">
+            <div class="row d-flex justify-content-center mb-5">
+
+                <div class="m-1 test" style="width: 4.5%; height: 40px;">
+                    <img src="images/1.png" id="1" class="img w-100" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height:40px;">
+                    <img src="images/2.png" id="2" class="img w-100" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px;">
+                    <img src="images/3.png" id="3" class="img w-100" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/4.png" id="4" class="img w-100" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/5.png" id="5" class="img" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/6.png" id="6" class="img" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/7.png" id="7" class="img" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/8.png" id="8" class="img" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/9.png" id="9" class="img" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/10.png" id="10" class="img" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/11.png" id="11" class="img" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/12.png" id="12" class="img" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/13.png" id="13" class="img" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/14.png" id="14" class="img" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/15.png" id="15" class="img" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/16.png" id="16" class="img" alt="">
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center mb-5 " style="margin-top: 105px;">
+
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/17.png" class="img" id="17" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/18.png" class="img" id="18" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/19.png" class="img" id="19" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/20.png" class="img" id="20" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/21.png" class="img" id="21" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/22.png" class="img" id="22" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/23.png" class="img" id="23" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/24.png" class="img" id="24" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/25.png" class="img" id="25" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/26.png" class="img" id="26" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/27.png" class="img" id="27" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/28.png" class="img" id="28" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/29.png" class="img" id="29" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/30.png" class="img" id="30" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/31.png" class="img" id="31" alt="">
+                </div>
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="images/32.png" class="img" id="32" alt="">
+                </div>
+            </div>
+
+            <!-- <div class="d-flex justify-content-center mt-4 ">
+                <button type="submit" class="btn btn-outline-primary">submit</button>
+            </div> -->
+        </form>
+    </div>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/index_js.js"></script>
+</body>
+
+</html>

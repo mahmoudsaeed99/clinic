@@ -8,4 +8,5 @@ class Transaction extends Model
 {
     protected $gaurded=['id'];
     
+    
 }
