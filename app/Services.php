@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Services extends Model
 {
     protected $gaurded=['id'];
+    $this->has
     
 }

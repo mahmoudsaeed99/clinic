@@ -19,8 +19,7 @@ class CreateTransactionsTable extends Migration
             $table->foreign('patient_id')->references('id')->on('patients');
             $table->unsignedBigInteger('service_id');
             $table->foreign('service_id')->references('id')->on('services');
-            $table->boolean('commit');
-            $table->date('date');
+            $table->timestamps();
         });
     }
 
