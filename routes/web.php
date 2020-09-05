@@ -14,5 +14,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin.login');
+});
+Route::post('/loginHandle','Admin@logHandle');
+Route::get('/home', function () {
+    return view('admin.home');
+});
+Route::get('/service', 'Admin@getService');
+Route::get('/service/update/{id}/{price}', 'Admin@updateService');
+Route::post('/service/add', 'Admin@addService');
+Route::get('/get/form', 'Admin@getUserForm');
+Route::get('/userform','Admin@getUserForm');
+Route::get('/teeth', function () {
+    return view('front.teeth');
+});
+Route::get('/image', function () {
+    return view('front.images');
 });
