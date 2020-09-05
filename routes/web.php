@@ -12,22 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::namespace('dashboard')->prefix('admin')->group(function(){
 
-Route::get('/', function () {
-    return view('admin.login');
-});
-Route::post('/loginHandle','Admin@logHandle');
-Route::get('/home', function () {
-    return view('admin.home');
-});
-Route::get('/service', 'Admin@getService');
-Route::get('/service/update/{id}/{price}', 'Admin@updateService');
-Route::post('/service/add', 'Admin@addService');
-Route::get('/get/form', 'Admin@getUserForm');
-Route::get('/userform','Admin@getUserForm');
-Route::get('/teeth', function () {
-    return view('front.teeth');
-});
-Route::get('/image', function () {
-    return view('front.images');
+
+    Route::get('/','AuthController@adminLogin');
+    Route::post('/loginHandle','AuthController@adminHandelLogin');
+    Route::middleware('adminAuth:admin')->group(function(){
+        Route::get('/home','HomeController@index');
+        Route::get('/service', 'ServiceController@allServices');
+        Route::post('/service/add', 'ServiceController@addService');
+        Route::get('/service/update/{$id}', 'Admin@updateService');
+    });
 });

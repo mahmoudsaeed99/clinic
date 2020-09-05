@@ -15,51 +15,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr style="background-color:firebrick">
-                        <td>mahmoud saeed </td>
-                        <td>0111*******</td>
-                        <td>13/4</td>
-                        <td><button class="btn btn-primary">confirmation</button></td>
-                    </tr>
-                    <tr style="background-color:firebrick">
-                        <td>mahmoud saeed </td>
-                        <td>0111*******</td>
-                        <td>13/4</td>
-                        <td><button class="btn btn-primary">confirmation</button></td>
-                    </tr>
+                  
+                 @foreach ($Bookings as $booking)
+                     
                     <tr style="background-color:darkgreen">
-                        <td>mahmoud saeed </td>
-                        <td>0111*******</td>
-                        <td>13/4</td>
-                        <td><button class="btn btn-danger">cancel</button></td>
+                        <td >{{$booking->patient->name}} </td>
+                        <td>{{$booking->patient->mobile}}</td>
+                        <td>{{ $booking->created_at}}</td>
+                      <td><button class="btn btn-danger">@if($booking->commit==0)cancel @else confirmed @endif</button></td>
+                      
                     </tr>
-                    <tr style="background-color: firebrick">
-                        <td >mahmoud saeed </td>
-                        <td>0111*******</td>
-                        <td>13/4</td>
-                        <td><button class="btn btn-primary">confirmation</button></td>
-                    </tr>
-                    <tr style="background-color:darkgreen">
-                        <td >mahmoud saeed </td>
-                        <td>0111*******</td>
-                        <td>13/4</td>
-                        <td><button class="btn btn-danger">cancel</button></td>
-                    </tr>
-                    <tr style="background-color: firebrick"> 
-                        <td >mahmoud saeed </td>
-                        <td>0111*******</td>
-                        <td>13/4</td>
-                        <td><button class="btn btn-primary">confirmation</button></td>
-                    </tr>
-                    <tr style="background-color:darkgreen">
-                        <td >mahmoud saeed </td>
-                        <td>0111*******</td>
-                        <td>13/4</td>
-                        <td><button class="btn btn-danger">cancel</button></td>
-                    </tr>
-                    
+                    @endforeach   
                     
                 </tbody>
+            
             </table>
+           
     </div>
     @endsection('content')
