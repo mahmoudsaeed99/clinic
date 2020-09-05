@@ -17,8 +17,8 @@ Route::namespace('dashboard')->prefix('admin')->group(function(){
 
     Route::get('/','AuthController@adminLogin');
     Route::post('/loginHandle','AuthController@adminHandelLogin');
+    Route::get('/home','HomeController@index');
     Route::middleware('adminAuth:admin')->group(function(){
-        Route::get('/home','HomeController@index');
         Route::get('/service', 'ServiceController@allServices');
         Route::post('/service/add', 'ServiceController@addService');
         Route::get('/service/update/{$id}', 'Admin@updateService');
