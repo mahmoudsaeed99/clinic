@@ -18,7 +18,7 @@ class AuthController extends Controller
       'name' => 'required|string',
       'password' => 'required|string'
     ]);
-    if (!auth()->guard('admin')->attempt(['email' => $data['email'], 'password' => $data['password']])) {
+    if (!auth()->guard('admin')->attempt(['name' => $data['name'], 'password' => $data['password']])) {
       return back();
     }
     else{

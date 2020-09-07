@@ -17,10 +17,15 @@ Route::namespace('dashboard')->prefix('admin')->group(function(){
 
     Route::get('/','AuthController@adminLogin');
     Route::post('/loginHandle','AuthController@adminHandelLogin');
+    Route::get('/service', 'ServiceController@allServices');
+    Route::post('/service/add', 'ServiceController@addService');
+    Route::post('/service/update/{id}', 'ServiceController@updateService');
+    Route::get('/service/delete/{id}', 'ServiceController@deleteService');
     Route::get('/home','HomeController@index');
+    Route::post('/get/patient','HomeController@getPatient');
+    Route::get('/get/patient/form','HomeController@getPatientForm');
+    Route::post('/get/patient/register','HomeController@patientRegister');
     Route::middleware('adminAuth:admin')->group(function(){
-        Route::get('/service', 'ServiceController@allServices');
-        Route::post('/service/add', 'ServiceController@addService');
-        Route::get('/service/update/{$id}', 'Admin@updateService');
+        
     });
 });
