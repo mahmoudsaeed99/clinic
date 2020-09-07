@@ -37,3 +37,16 @@ function save() {
         console.log(c);
     }
 }
+function deleteService(){
+    var id  = document.getElementById ( "id" ).innerText
+    console.log(id)
+    $.ajax({
+        type :"GET",
+        url :"http://127.0.0.1:8000/admin/service/delete/"+id+"",
+        data:id,
+        success: function() {
+            console.log("Value added");
+          }
+    })
+    
+}

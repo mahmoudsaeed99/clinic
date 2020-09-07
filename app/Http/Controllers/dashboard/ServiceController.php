@@ -11,7 +11,7 @@ class ServiceController extends Controller
 {
     
     public function allServices(){
-        $data['services']=Services::select('name','price')->orderBy('id','DESC')->paginate(4);
+        $data['services']=Services::select('id','name','price')->orderBy('id','DESC')->paginate(4);
              return view('admin.services.allservices')->with($data);       
     }
     function addService(Request $request){
@@ -25,14 +25,16 @@ class ServiceController extends Controller
        
                    
     }
-    function updateService($id,Request $request){
-        
+    function updateService($id , Request $request){
       $data=$request->validate([
-        'newPrice'=>'required|max:10|numeric'
+        'price'=>'required',
       ]);
-           
-       
        Services::findOrFail($id)->update($data);
+       return redirect('admin/service');
+                
+    }
+    function deleteService($id){
+       Services::findOrFail($id)->delete();
        return redirect('admin/service');
                 
     }

@@ -107,6 +107,10 @@ return [
            'expire' => 3600,
             
         ],
+        'admins' => [
+            'provider' => 'admins',
+            'expire' => 3600,
+        ],
     ],
 
     /*

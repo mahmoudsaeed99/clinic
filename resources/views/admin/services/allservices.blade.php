@@ -26,6 +26,7 @@
                         <th>current price</th>
                         <th>change price</th>
                         <th>save</th>
+                        <th>delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,10 +35,12 @@
                     <td>{{$loop->iteration}}</td>
                         <td scope="row">{{$service->name}} </td>
                         <td>{{$service->price}}</td>
-                        <form>
+                        <form method="post"  action="{{url('admin/service/update/'.$service->id)}}">
                         @csrf
-                        <td><input name="newprice"type="text" id="newPrice" class="newPrice"></td>
-                        <td><a href="{{url('admin/service/update/',$service->id)}}"><i class="fas fa-plus"></i></a></td>
+                        <td name="id" type="number" id="id" class="id" style="display:none ;color:aliceblue">{{$service->id}}</td>
+                        <td><input name="price" type="number" id="newprice" class="newprice"></td>
+                        <td><button class="fas fa-plus " type="submit"></button></td>
+                        <td><button class="fas fa-minus" onclick="deleteService()"></button></td>
                         </form>
                     </tr>
                     @endforeach

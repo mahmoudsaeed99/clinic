@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Patient extends Model
 {
-    protected $dateFormat = 'U';
     protected $gaurded=['id'];
     protected $fillable=['name','age','totalMoney','PaidMoney','mobile','note','heart','diabetes','allergy','bleed'];
     public function services(){
