@@ -17,9 +17,9 @@ class HomeController extends Controller
       $data=$request->validate([
          'search'    => 'required|regex:/(0)[0-9]{9}/'
        ]);
-       $pateint = Patient::where('mobile' ,"=", $data['search'])->get();
+       $pateint = Patient::select('id')->where('mobile' ,"=", $data['search'])->get();
        if($pateint->count() > 0){
-         return redirect('admin/service');
+         return redirect('admin/patient/profile/'.$pateint[0]->id.'');
        }
        else{
          return redirect('admin/get/patient/form');
@@ -54,5 +54,10 @@ class HomeController extends Controller
        $patient->note = $data['note'];
        $patient->save();
        return redirect('admin/home') ;
+   }
+   function patientProfile($id){
+      $patient['patient'] = Patient::findorfail($id);
+      // dd($patient);
+      return view('front.profile')->with($patient);
    }
 }

@@ -10,19 +10,20 @@
     <link rel="stylesheet" href="{{asset('css/index.css')}}">
 </head>
 
-<body class="">
+<body class="bg-light">
     <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: violet;">
-        <a class="navbar-brand" href="{{url('/home')}}">DashBoard</a>
+        <a class="navbar-brand" href="{{url('admin/home')}}">DashBoard</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{url('/service')}}">operations <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{url('admin/service')}}">operations <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="patient name">
+            <form class="form-inline my-2 my-lg-0" method="post" , action="{{url('admin/get/patient')}}">
+                @csrf
+                <input class="form-control mr-sm-2" name = "search" type="text" placeholder="patient name">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
@@ -56,66 +57,26 @@
                             </tr>
                         </thead>
                         <tbody>
+                        @foreach($services as $service)
                             <tr>
-                                <form method="post" action="">
-                                    <td scope="row">حشو عصب </td>
-                                    <td>300</td>
+                                <form method="post" action="{{url('admin/add/patient/service/.$service->id')}}">
+                                    <td scope="row">{{$service->name}} </td>
+                                    <td>{{$service->price}}</td>
                                     <td><button class="fas fa-plus ml-3" type="submit"></button></td>
                                 </form>
                             </tr>
-                            <tr>
-                                <form method="post">
-                                    <td scope="row">حشو عصب </td>
-                                    <td>300</td>
-                                    <td><button class="fas fa-plus ml-3" type="submit"></button></td>
-                                </form>
-                            </tr>
-                            <tr>
-                                <form method="post">
-                                    <td scope="row">حشو عصب </td>
-                                    <td>300</td>
-                                    <td><button class="fas fa-plus ml-3" type="submit"></button></td>
-                                </form>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
                 <button class="btn btn-primary w-100 mt-2" id="book"> booking</button>
                 <form class="book" style="display: none;" method="GET" action="login.html">
                     <input type="date" class="date mt-1">
-                    <input type="time" class="time mt-1">
                     <button class="fas fa-plus ml-3" type="submit"></button>
                 </form>
             </div>
-            <div class="col-md-8">
-                <div class="row " style="background-color: teal;">
-                    <div class="col-md-3">
-                        <img src="images/—Pngtree—baby teeth_3355819.png" class="w-50">
-                    </div>
-                    <div class="col-md-9 mt-5" style="color: white;">
-                        <div class="row mb-3">
-
-                            <label for="" class="col-md-1">Name:</label>
-                            <label for="" class="col-md-5">Mahmoud saeed</label>
-                            <label for="" class="col-md-1">age:</label>
-                            <label for="" class="col-md-5">21</label>
-                            <label for="" class="col-md-2">Address :</label>
-                            <label for="" class="col-md-4">Cairo</label>
-                            <label for="" class="col-md-1">mobile:</label>
-                            <label for="" class="col-md-5">01113936587</label>
-                            <label for="" class="col-md-2">pb1 :</label>
-                            <label for="" class="col-md-4">yes</label>
-                            <label for="" class="col-md-1">pb2 :</label>
-                            <label for="" class="col-md-5">no</label>
-                            <label for="" class="col-md-2">pb3 :</label>
-                            <label for="" class="col-md-4">no</label>
-                            <label for="" class="col-md-1">pb4 :</label>
-                            <label for="" class="col-md-5">yes</label>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
+            @yield('nav')
+            
 
 
         </div>
