@@ -10,7 +10,8 @@
             <div class="col-sm-1"></div>
             <div class="col-sm-2"></div>
             <div class="col-sm-6 bg-light boxStyle">
-                <form name="theform" class="" action="">
+                <form name="theform" class="" method="POST" action="{{url('admin/get/patient/register')}}">
+                    @csrf
                     <div class="form-group mt-3">
                         <div class="width30 floatL"><label>FullName</label></div>
                         <div class="width70 floatR"><input id="firstname" class="width100 form-control" name="firstname"
@@ -18,7 +19,7 @@
                         </div><br><br>
                         <div class="form-group">
                             <div class="width30 floatL"><label>Age</label></div>
-                            <div class="width70 floatR"><input class="width100 form-control" name="age" type="text"
+                            <div class="width70 floatR"><input class="width100 form-control" name="age" type="number"
                                     value="" size="20"></div>
                         </div><br>
                         <div class="form-group">

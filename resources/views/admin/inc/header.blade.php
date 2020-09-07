@@ -21,8 +21,9 @@
                     <a class="nav-link" href="{{url('admin/service')}}">operations <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="patient name">
+            <form class="form-inline my-2 my-lg-0" method="post" , action="{{url('admin/get/patient')}}">
+                @csrf
+                <input class="form-control mr-sm-2" name = "search" type="text" placeholder="patient name">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
