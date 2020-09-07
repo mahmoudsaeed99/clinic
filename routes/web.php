@@ -25,6 +25,8 @@ Route::namespace('dashboard')->prefix('admin')->group(function(){
     Route::post('/get/patient','HomeController@getPatient');
     Route::get('/get/patient/form','HomeController@getPatientForm');
     Route::post('/get/patient/register','HomeController@patientRegister');
+    Route::post('/add/patient/service/{service_id}','HomeController@addPatientService');
+    Route::get('/patient/profile/{id}','HomeController@patientProfile');
     Route::middleware('adminAuth:admin')->group(function(){
         
     });
