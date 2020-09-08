@@ -20,6 +20,10 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="{{url('admin/service')}}">operations <span class="sr-only">(current)</span></a>
                 </li>
+               {{-- //links of (profile-- images--profile) --}}
+                @yield('buttons')
+
+
             </ul>
             <form class="form-inline my-2 my-lg-0" method="post" , action="{{url('admin/get/patient')}}">
                 @csrf
@@ -33,19 +37,9 @@
         <div class="row ">
             <div class="col-md-1"></div>
             <div class="col-md-2">
-                <nav class="navbar navbar-light bg-light">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="{{url('/profile')}}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="{{url('/teeth')}}">teeth</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="{{url('/image')}}">images</a>
-                        </li>
-                    </ul>
-                </nav>
+                {{-- adding image button --}}
+               {{-- @yield('image') --}}
+               
                 <button class="btn btn-primary w-100 " id="operation"> operation</button>
                 <div class="operator" style="display: none;">
                     <table class="table table-striped table-inverse table-responsive">
@@ -74,6 +68,10 @@
                     <input type="date" class="date mt-1">
                     <button class="fas fa-plus ml-3" type="submit"></button>
                 </form>
+                  {{-- adding image form --}}
+                  @yield('addImage')
+               
+                
             </div>
             @yield('nav')
             
