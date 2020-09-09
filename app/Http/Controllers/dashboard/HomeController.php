@@ -18,17 +18,7 @@ class HomeController extends Controller
       return view('admin.home')->with($data);
    }
    //search function
-<<<<<<< Updated upstream
-   function getPatient(Request $request)
-   {
-      $data = $request->validate([
-         'search'    => 'required|regex:/(0)[0-9]{9}/'
-      ]);
-      $pateint = Patient::select('id')->where('mobile', "=", $data['search'])->get();
-      if ($pateint->count() > 0) {
-         return redirect('/patient/profile/' . $pateint[0]->id . '');
-      } else {
-=======
+
    // function getPatient(Request $request){
    //    $data=$request->validate([
    //       'search'    => 'required|regex:/(0)[0-9]{9}/'
@@ -55,7 +45,7 @@ class HomeController extends Controller
          return redirect('/patient/profile/'.$pateint[0]->id.'');
        }
        else{
->>>>>>> Stashed changes
+
          return redirect('admin/get/patient/form');
       }
    }
@@ -122,7 +112,7 @@ class HomeController extends Controller
    {
       $patient['patient'] = Patient::findorfail($id);
       return view('front.teeth')->with($patient);
-<<<<<<< Updated upstream
+
    }
    function addPatientService($pateint_id, $service_id)
    {
@@ -143,7 +133,7 @@ class HomeController extends Controller
       $book->created_at = $date;
       $book->save();
       
-=======
+
 
    }
    function calculation(Request $request){
@@ -158,6 +148,6 @@ class HomeController extends Controller
      Patient::findorfail($request->id)->update($data);
      return back();
 
->>>>>>> Stashed changes
+
    }
 }
