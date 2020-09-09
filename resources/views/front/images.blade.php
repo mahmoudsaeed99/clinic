@@ -18,7 +18,9 @@
 @endsection
 @section('content')
 @section('nav')
+<h3 style="display: none;" id="patientID">{{$patient->id}}</h3>
 <div class="col-md-8">
+
                 <div class="row " style="background-color: teal;">
                     <div class="col-md-3">
                         <img src="images/—Pngtree—baby teeth_3355819.png" class="w-50">
@@ -81,7 +83,7 @@
             @csrf
         <li class="nav-item">
         <input type="hidden" name="id" value="{{$patient->id}}">
-            <input class="form-control-file" type="file" name="img">
+        <input class="form-control-file" type="file" name="img">
         </li>
         <input class="btn btn-info" type="submit" value="submit">
     </form>
@@ -96,14 +98,18 @@
             <img class="imgList" src="{{asset('images/uploads/'.$item->img)}}" alt="">
            
        
+            @endforeach
+
        
-        @endforeach
         <div class="display d-flex justify-content-center">
-            <img src="{{asset('images/uploads/'.$item->img)}}" class="w-25 imgDis" alt="">
+<<<<<<< Updated upstream
+            <img src="{{asset('images/uploads/test.png')}}" class="w-25 imgDis" alt="">
+=======
+            <img src="{{asset('images/uploads/'.$patient->images[0]->img)}}" class="w-25 imgDis" alt="">
+>>>>>>> Stashed changes
             </div>
     </div>
-
-
+   
 
     <!-- </div> -->
 

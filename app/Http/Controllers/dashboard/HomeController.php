@@ -8,32 +8,65 @@ use App\Booking;
 use App\Patient;
 use Image;
 use App\Images;
+use Illuminate\Support\Facades\DB;
+
 class HomeController extends Controller
 {
-   public function index(){
-        $data['Bookings']=Booking::select('patient_id','commit','created_at')->paginate(5);
-        return view('admin.home')->with($data);
+   public function index()
+   {
+      $data['Bookings'] = Booking::select('patient_id', 'commit', 'created_at')->paginate(5);
+      return view('admin.home')->with($data);
    }
    //search function
+<<<<<<< Updated upstream
+   function getPatient(Request $request)
+   {
+      $data = $request->validate([
+         'search'    => 'required|regex:/(0)[0-9]{9}/'
+      ]);
+      $pateint = Patient::select('id')->where('mobile', "=", $data['search'])->get();
+      if ($pateint->count() > 0) {
+         return redirect('/patient/profile/' . $pateint[0]->id . '');
+      } else {
+=======
+   // function getPatient(Request $request){
+   //    $data=$request->validate([
+   //       'search'    => 'required|regex:/(0)[0-9]{9}/'
+   //     ]);
+   //     $pateint = Patient::select('id')->where('mobile' ,"=", $data['search'])->get();
+   //     if($pateint->count() > 0){
+   //       return redirect('/patient/profile/'.$pateint[0]->id.'');
+   //     }
+   //     else{
+   //       return redirect('admin/get/patient/form');
+   //     }
+
+   // }
    function getPatient(Request $request){
       $data=$request->validate([
-         'search'    => 'required|regex:/(0)[0-9]{9}/'
+         'search'    => 'required'
        ]);
-       $pateint = Patient::select('id')->where('mobile' ,"=", $data['search'])->get();
+       //('name','like','%'.$data['search'].'%')
+     
+   
+       $pateint = Patient::select('id')->where("mobile" ,"=", $data['search'])->orWhere("name","=",$data['search'])->get();
+      //  dd( $pateint);
        if($pateint->count() > 0){
          return redirect('/patient/profile/'.$pateint[0]->id.'');
        }
        else{
+>>>>>>> Stashed changes
          return redirect('admin/get/patient/form');
-       }
-
+      }
    }
-   function getPatientForm(){
+   function getPatientForm()
+   {
       return view('admin.patientForm');
    }
-   function patientRegister(Request $request){
+   function patientRegister(Request $request)
+   {
       // echo "mahmoud";
-      $data=$request->validate([
+      $data = $request->validate([
          'firstname'    => 'required|min:10',
          'age'    => 'required',
          'mobile'    => 'required|regex:/(0)[0-9]{9}/',
@@ -42,50 +75,89 @@ class HomeController extends Controller
          'allergy'    => 'required',
          'bledding'    => 'required',
          'note' => 'required'
-       ]);
-       $patient = new Patient();
-       $patient->name = $data['firstname'];
-       $patient->age = $data['age'];
-       $patient->mobile = $data['mobile'];
-       $patient->heart = $data['heart'];
-       $patient->diabetes = $data['diabetes'];
-       $patient->allergy = $data['allergy'];
-       $patient->bleed = $data['bledding'];
-       $patient->totalMoney = 0;
-       $patient->paidMoney = 0;
-       $patient->note = $data['note'];
-       $patient->save();
-       return redirect('admin/home') ;
+      ]);
+      $patient = new Patient();
+      $patient->name = $data['firstname'];
+      $patient->age = $data['age'];
+      $patient->mobile = $data['mobile'];
+      $patient->heart = $data['heart'];
+      $patient->diabetes = $data['diabetes'];
+      $patient->allergy = $data['allergy'];
+      $patient->bleed = $data['bledding'];
+      $patient->totalMoney = 0;
+      $patient->paidMoney = 0;
+      $patient->note = $data['note'];
+      $patient->save();
+      return redirect('admin/home');
    }
-   function patientProfile($id){
+   function patientProfile($id)
+   {
       $patient['patient'] = Patient::findorfail($id);
       // dd($patient);
       return view('front.profile')->with($patient);
    }
-   function images($id){
+   function images($id)
+   {
       $patient['patient'] = Patient::findorfail($id);
       return view('front.images')->with($patient);
    }
-   function addImage(Request $request){
-      $data=$request->validate([
-        'img'=>'required|image|mimes:jpeg,jpg,png' 
+   function addImage(Request $request)
+   {
+      $data = $request->validate([
+         'img' => 'required|image|mimes:jpeg,jpg,png'
       ]);
-      $data['id']=$request->id;
-      $newName=$data['img']->hashName();
-      Image::make($data['img'])->resize(100,100)->save(public_path('images/uploads/'.$newName));
-      $data['img']=$newName;
-     
-      $newImg=new Images();
-      $newImg->patient_id=$request->id;
-      $newImg->img=$data['img'];
+      $data['id'] = $request->id;
+      $newName = $data['img']->hashName();
+      Images::make($data['img'])->resize(100, 100)->save(public_path('images/uploads/' . $newName));
+      $data['img'] = $newName;
+
+      $newImg = new Images();
+      $newImg->patient_id = $request->id;
+      $newImg->img = $data['img'];
       $newImg->save();
-      // return url('patient/images/'.$request->id);
+      
       return back();
+   }
+   function showTeeth($id)
+   {
+      $patient['patient'] = Patient::findorfail($id);
+      return view('front.teeth')->with($patient);
+<<<<<<< Updated upstream
+   }
+   function addPatientService($pateint_id, $service_id)
+   {
+      DB::insert('insert into patient_service (patient_id, service_id) values (?, ?)', [$pateint_id, $service_id]);
+   }
+   function addMoney($pateint_id, $price)
+   {
+      $pateint = Patient::findorfail($pateint_id);
+      $pateint->totalMoney = $pateint->totalMoney  + $price;
+      $pateint->save();
+   }
+   function bookingDate($pateint_id, $date)
+   {
+      // bookings
+      $book  = new Booking();
+      $book->patient_id = $pateint_id;
+      $book->commit = 0;
+      $book->created_at = $date;
+      $book->save();
+      
+=======
 
    }
-   function showTeeth($id){
-      $patient['patient'] = Patient::findorfail($id);
-      return view('front.images')->with($patient);
+   function calculation(Request $request){
+      $data=$request->validate([
+         'totalMoney'=>'required|numeric'
+      
+      ]);
+      $oldTotalMoney = Patient::findorfail($request->id)->totalMoney;
+      $data['id']=$request->id;
+      $data['totalMoney']=$oldTotalMoney-$data['totalMoney'];
+   
+     Patient::findorfail($request->id)->update($data);
+     return back();
 
+>>>>>>> Stashed changes
    }
 }
