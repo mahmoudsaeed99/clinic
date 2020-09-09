@@ -64,10 +64,10 @@
                     </table>
                 </div>
                 <button class="btn btn-primary w-100 mt-2" id="book"> booking</button>
-                <form class="book" style="display: none;" method="GET" action="login.html">
-                    <input type="date" class="date mt-1">
-                    <button class="fas fa-plus ml-3" type="submit"></button>
-                </form>
+                <div class="book" style="display: none;" >
+                    <input type="date" class="bookDate mt-1" id="bookDate">
+                    <button class="fas fa-plus ml-3" onclick="bookDate()"></button>
+                </div>
                   {{-- adding image form --}}
                   @yield('addImage')
                

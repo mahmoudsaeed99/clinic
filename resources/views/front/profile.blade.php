@@ -18,6 +18,7 @@
 @section('content')
 
 @section('nav')
+<h3 style="display: none;" id="patientID">{{$patient->id}}</h3>
 <div class="col-md-8">
                 <div class="row " style="background-color: teal;">
                     <div class="col-md-3">

@@ -22,7 +22,7 @@
                         <td >{{$booking->patient->name}} </td>
                         <td>{{$booking->patient->mobile}}</td>
                         <td>{{ $booking->created_at}}</td>
-                      <td><button class="btn btn-danger">@if($booking->commit==0)cancel @else confirmed @endif</button></td>
+                      <td><button class="btn btn-danger" >@if($booking->commit==1)cancel @else confirmed @endif</button></td>
                       
                     </tr>
                     @endforeach   
