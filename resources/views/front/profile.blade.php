@@ -4,6 +4,7 @@
     profile
 @endsection('title')
 @section('content')
+
 @section('nav')
 <div class="col-md-8">
                 <div class="row " style="background-color: teal;">
