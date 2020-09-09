@@ -18,6 +18,7 @@ class HomeController extends Controller
       return view('admin.home')->with($data);
    }
    //search function
+<<<<<<< Updated upstream
    function getPatient(Request $request)
    {
       $data = $request->validate([
@@ -27,6 +28,34 @@ class HomeController extends Controller
       if ($pateint->count() > 0) {
          return redirect('/patient/profile/' . $pateint[0]->id . '');
       } else {
+=======
+   // function getPatient(Request $request){
+   //    $data=$request->validate([
+   //       'search'    => 'required|regex:/(0)[0-9]{9}/'
+   //     ]);
+   //     $pateint = Patient::select('id')->where('mobile' ,"=", $data['search'])->get();
+   //     if($pateint->count() > 0){
+   //       return redirect('/patient/profile/'.$pateint[0]->id.'');
+   //     }
+   //     else{
+   //       return redirect('admin/get/patient/form');
+   //     }
+
+   // }
+   function getPatient(Request $request){
+      $data=$request->validate([
+         'search'    => 'required'
+       ]);
+       //('name','like','%'.$data['search'].'%')
+     
+   
+       $pateint = Patient::select('id')->where("mobile" ,"=", $data['search'])->orWhere("name","=",$data['search'])->get();
+      //  dd( $pateint);
+       if($pateint->count() > 0){
+         return redirect('/patient/profile/'.$pateint[0]->id.'');
+       }
+       else{
+>>>>>>> Stashed changes
          return redirect('admin/get/patient/form');
       }
    }
@@ -86,13 +115,14 @@ class HomeController extends Controller
       $newImg->patient_id = $request->id;
       $newImg->img = $data['img'];
       $newImg->save();
-      // return url('patient/images/'.$request->id);
+      
       return back();
    }
    function showTeeth($id)
    {
       $patient['patient'] = Patient::findorfail($id);
       return view('front.teeth')->with($patient);
+<<<<<<< Updated upstream
    }
    function addPatientService($pateint_id, $service_id)
    {
@@ -113,5 +143,21 @@ class HomeController extends Controller
       $book->created_at = $date;
       $book->save();
       
+=======
+
+   }
+   function calculation(Request $request){
+      $data=$request->validate([
+         'totalMoney'=>'required|numeric'
+      
+      ]);
+      $oldTotalMoney = Patient::findorfail($request->id)->totalMoney;
+      $data['id']=$request->id;
+      $data['totalMoney']=$oldTotalMoney-$data['totalMoney'];
+   
+     Patient::findorfail($request->id)->update($data);
+     return back();
+
+>>>>>>> Stashed changes
    }
 }

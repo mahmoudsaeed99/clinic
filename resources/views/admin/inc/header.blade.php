@@ -21,6 +21,12 @@
                     <a class="nav-link" href="{{url('admin/service')}}">operations <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
+            <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{{url('/')}}">logout </a>
+      </li>
+     
+    </ul>
             <form class="form-inline my-2 my-lg-0" method="post" , action="{{url('admin/get/patient')}}">
                 @csrf
                 <input class="form-control mr-sm-2" name = "search" type="text" placeholder="patient name">

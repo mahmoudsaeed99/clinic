@@ -23,7 +23,7 @@
         </div>
 
         <!-- Login Form -->
-        <form method="POST"action="{{url('admin/loginHandle')}}"> 
+        <form method="POST"action="{{url('/loginHandle')}}"> 
             @csrf
             <input type="text" id="login" class="fadeIn second" name="name" placeholder="login">
             <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">

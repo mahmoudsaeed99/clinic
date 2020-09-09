@@ -18,7 +18,6 @@ class CreatePatientsTable extends Migration
             $table->string("name");
             $table->integer("age");
             $table->integer("totalMoney");
-            $table->integer("paidMoney");
             $table->string("mobile");
             $table->text("note");
             $table->boolean("heart");

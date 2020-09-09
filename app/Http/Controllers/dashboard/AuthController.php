@@ -18,11 +18,16 @@ class AuthController extends Controller
       'name' => 'required|string',
       'password' => 'required|string'
     ]);
-    if (!auth()->guard('admin')->attempt(['name' => $data['name'], 'password' => $data['password']])) {
+    if (!Auth()->guard('admin')->attempt(['name' => $data['name'], 'password' => $data['password']])) {
       return back();
     }
     else{
       return redirect('admin/home');
     }
   }
+  public function logout(){
+    //using Auth() helper function to avoid making use Auth
+    Auth()->guard('admin')->logout();
+    return redirect('/');
+}
 }

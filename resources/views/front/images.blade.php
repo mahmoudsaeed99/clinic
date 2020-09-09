@@ -98,14 +98,18 @@
             <img class="imgList" src="{{asset('images/uploads/'.$item->img)}}" alt="">
            
        
+            @endforeach
+
        
-        @endforeach
         <div class="display d-flex justify-content-center">
+<<<<<<< Updated upstream
             <img src="{{asset('images/uploads/test.png')}}" class="w-25 imgDis" alt="">
+=======
+            <img src="{{asset('images/uploads/'.$patient->images[0]->img)}}" class="w-25 imgDis" alt="">
+>>>>>>> Stashed changes
             </div>
     </div>
-
-
+   
 
     <!-- </div> -->
 
