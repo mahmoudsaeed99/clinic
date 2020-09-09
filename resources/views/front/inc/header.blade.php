@@ -53,11 +53,11 @@
                         <tbody>
                         @foreach($services as $service)
                             <tr>
-                                <form method="post" action="{{url('admin/add/patient/service/.$service->id')}}">
-                                    <td scope="row">{{$service->name}} </td>
-                                    <td>{{$service->price}}</td>
-                                    <td><button class="fas fa-plus ml-3" type="submit"></button></td>
-                                </form>
+                                <!-- <form method="post" action=""> -->
+                                    <td scope="row" id="name">{{$service->name}} </td>
+                                    <td id="price{{$service->id}}">{{$service->price}}</td>
+                                    <td><button class="fas fa-plus ml-3" onclick="addService('{{$service->id}}')"></button></td>
+                                <!-- </form> -->
                             </tr>
                             @endforeach
                         </tbody>

@@ -50,3 +50,13 @@ function deleteService(){
     })
     
 }
+
+
+function addService(id){
+    console.log(id);
+    var name  = document.getElementById ("price"+id).innerText
+    console.log(name);
+    for(var i = 0 ; i < 100000000 ; i++){
+
+    }
+}
