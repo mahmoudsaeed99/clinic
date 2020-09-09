@@ -175,6 +175,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\PatientProvider::class,
+        Intervention\Image\ImageServiceProvider::class      
 
     ],
 
@@ -226,8 +227,9 @@ return [
         'Str' => Illuminate\Support\Str::class,
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
-        'View' => Illuminate\Support\Facades\View::class,
-
+         'View' => Illuminate\Support\Facades\View::class,
+         'Image' => Intervention\Image\Facades\Image::class
+        
     ],
 
 ];

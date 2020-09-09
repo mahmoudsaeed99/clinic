@@ -1,8 +1,20 @@
 
 @extends('front.layout.front')
+@section('buttons')
+<li class="nav-item active">
+    <a class="nav-link" href="{{url('patient/profile/'.$patient->id)}}">profile <span class="sr-only">(current)</span></a>
+</li>
+
+<li class="nav-item active">
+    <a class="nav-link" href="{{url('patient/teeth/'.$patient->id)}}">teeth <span class="sr-only">(current)</span></a>
+</li>
+<li class="nav-item active">
+    <a class="nav-link" href="{{url('patient/images/'.$patient->id)}}">images <span class="sr-only">(current)</span></a>
+</li> 
+@endsection
 @section('title')
     profile
-@endsection('title')
+@endsection
 @section('content')
 
 @section('nav')
@@ -60,7 +72,7 @@
                 </div>
                 
             </div>    
-@endsection('nav')
+@endsection
 
 <table class="table">
     <thead>
@@ -79,5 +91,5 @@
     </tbody>
 </table>
 
-@endsection('content')
+@endsection
 
