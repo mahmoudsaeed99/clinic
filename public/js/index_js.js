@@ -54,9 +54,39 @@ function deleteService(){
 
 function addService(id){
     console.log(id);
-    var name  = document.getElementById ("price"+id).innerText
-    console.log(name);
-    for(var i = 0 ; i < 100000000 ; i++){
+    var price = document.getElementById ("price"+id).innerText
+    var patient  = document.getElementById ("patientID").textContent
+    $.ajax({
+        type :"GET",
+        url :"http://127.0.0.1:8000/patient/add/service/"+patient+"/"+id+"",
+        data:(patient , id),
+        success: function() {
+            window.alert("service added");
+          }
+    })
+    $.ajax({
+        type :"GET",
+        url :"http://127.0.0.1:8000/patient/add/money/"+patient+"/"+price+"",
+        data:(patient , price),
+    })
+
+
+
+}
+
+function bookDate(){
+    var patient  = document.getElementById ("patientID").textContent
+    var date = document.getElementById("bookDate").value
+    $.ajax({
+        type :"GET",
+        url :"http://127.0.0.1:8000/patient/bookDate/"+patient+"/"+date+"",
+        data:(patient , date),
+        success: function() {
+            window.alert("create booking");
+          }
+    })
+    for(var i = 0 ; i < 10000000 ; i++){
 
     }
+    
 }

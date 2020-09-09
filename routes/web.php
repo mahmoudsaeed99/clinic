@@ -25,7 +25,6 @@ Route::namespace('dashboard')->group(function(){
     Route::post('/get/patient','HomeController@getPatient');
     Route::get('/get/patient/form','HomeController@getPatientForm');
     Route::post('/get/patient/register','HomeController@patientRegister');
-    Route::post('/add/patient/service/{service_id}','HomeController@addPatientService');
     
    });
    Route::prefix('patient')->group(function(){
@@ -33,6 +32,9 @@ Route::namespace('dashboard')->group(function(){
        Route::post('/addImages','HomeController@addImage');
        Route::get('/profile/{id}','HomeController@patientProfile');
        Route::get('/teeth/{id}','HomeController@showTeeth');
+       Route::get('/add/service/{patient_id}/{service_id}','HomeController@addPatientService');
+       Route::get('/add/money/{patient_id}/{price}','HomeController@addMoney');
+       Route::get('/bookDate/{patient_id}/{Date}','HomeController@bookingDate');
    });
     
     Route::middleware('adminAuth:admin')->group(function(){
