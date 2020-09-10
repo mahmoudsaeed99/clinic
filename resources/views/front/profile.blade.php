@@ -81,6 +81,7 @@
             <th>service</th>
             <th>price</th>
             <th>time</th>
+            <!-- <th>paid</th> -->
         </tr>
     </thead>
     <tbody>
@@ -88,9 +89,21 @@
             <td scope="row"></td>
             <td></td>
             <td></td>
+            <!-- <form>
+            <td><input type="number"name="paid"placeholder="enter paid amount"></td>
+            </form> -->
         </tr>
+        
     </tbody>
+          
 </table>
+           <form action="{{url('patient/calculation')}}"method="post"> 
+              @csrf
+           <input type="hidden" name="id" value="{{$patient->id}}">
+           <input name="totalMoney" class="form-control w-25" type="number" id="newprice" placeholder="enter paid amount" >
+           <br>
+           <input class="btn btn-info" type="submit" value="submit">
+            </form>
 
 @endsection
 
