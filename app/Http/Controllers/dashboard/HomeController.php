@@ -8,6 +8,8 @@ use App\Booking;
 use App\Patient;
 use Image;
 use App\Images;
+use App\LowerDenture;
+use App\UpperDenture;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -80,6 +82,22 @@ class HomeController extends Controller
       $patient->save();
       return redirect('admin/home');
    }
+   function create_lower_dentures($patientID){
+      $lower  =new LowerDenture();
+      $lower->patient_id = $patientID;
+      for($i = 16 ; $i < 33 ; $i++){
+         $lower->$i = "";
+      }
+
+   }
+   function create_upper_dentures($patientID){
+      $upper  =new UpperDenture();
+      $upper->patient_id = $patientID;
+      for($i = 16 ; $i < 33 ; $i++){
+         $upper->$i = "";
+      }
+      
+   }
    function patientProfile($id)
    {
       $patient['patient'] = Patient::findorfail($id);
@@ -111,6 +129,8 @@ class HomeController extends Controller
    function showTeeth($id)
    {
       $patient['patient'] = Patient::findorfail($id);
+      $patient['upper'] = UpperDenture::where('patient_id' , $id)->first();
+      $patient['lower'] = LowerDenture::where('patient_id' , $id)->first();
       return view('front.teeth')->with($patient);
 
    }

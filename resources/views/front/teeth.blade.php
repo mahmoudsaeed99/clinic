@@ -103,103 +103,103 @@
         <form method="GET" class="container-fluid teethOperator">
             <div class="row d-flex justify-content-center mb-5">
 
-                <div class="m-1 test" style="width: 4.5%; height: 40px;">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color:'{{$upper->one}}'">
                     <img src="{{asset('images/1.png')}}" id="1" class="img w-100" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height:40px;">
+                <div class="m-1 test" style="width: 4.5%; height:40px; background-color: '{{$upper->two}}';">
                     <img src="{{asset('images/2.png')}}" id="2" class="img w-100" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px;">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$upper->three}}';">
                     <img src="{{asset('images/3.png')}}" id="3" class="img w-100" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$upper->four}}'; ">
                     <img src="{{asset('images/4.png')}}" id="4" class="img w-100" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$upper->five}}'; ">
                     <img src="{{asset('images/5.png')}}" id="5" class="img" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$upper->six}}'; ">
                     <img src="{{asset('images/6.png')}}" id="6" class="img" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$upper->seven}}'; ">
                     <img src="{{asset('images/7.png')}}" id="7" class="img" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$upper->eight}}'; ">
                     <img src="{{asset('images/8.png')}}" id="8" class="img" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px;  background-color: '{{$upper->nine}}';">
                     <img src="{{asset('images/9.png')}}" id="9" class="img" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$upper->ten}}'; ">
                     <img src="{{asset('images/10.png')}}" id="10" class="img" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$upper->eleven}}'; ">
                     <img src="{{asset('images/11.png')}}" id="11" class="img" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$upper->twelve}}'; ">
                     <img src="{{asset('images/12.png')}}" id="12" class="img" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$upper->thirteen}}'; ">
                     <img src="{{asset('images/13.png')}}" id="13" class="img" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$upper->fourteen}}'; ">
                     <img src="{{asset('images/14.png')}}" id="14" class="img" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px;  background-color: '{{$upper->fifteen}}';">
                     <img src="{{asset('images/15.png')}}" id="15" class="img" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$upper->sixteen}}'; ">
                     <img src="{{asset('images/16.png')}}" id="16" class="img" alt="">
                 </div>
             </div>
             <div class="row d-flex justify-content-center mb-5 " style="margin-top: 105px;">
 
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$lower->seventeen}}'; ">
                     <img src="{{asset('images/17.png')}}" class="img" id="17" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$lower->eighteen}}'; ">
                     <img src="{{asset('images/18.png')}}" class="img" id="18" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$lower->nineteen}}'; ">
                     <img src="{{asset('images/19.png')}}" class="img" id="19" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$lower->twenty}}'; ">
                     <img src="{{asset('images/20.png')}}" class="img" id="20" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$lower->twentyone}}'; ">
                     <img src="{{asset('images/21.png')}}" class="img" id="21" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$lower->twentytwo}}'; ">
                     <img src="{{asset('images/22.png')}}" class="img" id="22" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$lower->twentythree}}'; ">
                     <img src="{{asset('images/23.png')}}" class="img" id="23" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px;  background-color: '{{$lower->twentyfour}}';">
                     <img src="{{asset('images/24.png')}}" class="img" id="24" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px;  background-color: '{{$lower->twentyfive}}';">
                     <img src="{{asset('images/25.png')}}" class="img" id="25" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$lower->twentysix}}'; ">
                     <img src="{{asset('images/26.png')}}" class="img" id="26" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px;  background-color: '{{$lower->twentyseven}}';">
                     <img src="{{asset('images/27.png')}}" class="img" id="27" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$lower->twentyeight}}'; ">
                     <img src="{{asset('images/28.png')}}" class="img" id="28" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$lower->twentynine}}'; ">
                     <img src="{{asset('images/29.png')}}" class="img" id="29" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$lower->thirty}}'; ">
                     <img src="{{asset('images/30.png')}}" class="img" id="30" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px;  background-color: '{{$lower->thirtyone}}';">
                     <img src="{{asset('images/31.png')}}" class="img" id="31" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$lower->thirtytwo}}'; ">
                     <img src="{{asset('images/32.png')}}" class="img" id="32" alt="">
                 </div>
             </div>

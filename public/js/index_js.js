@@ -1,3 +1,9 @@
+
+var teethContainer = ["" , "one" , "two", "three" , "four" , "five" , "six" , "seven" , "eight" , "nine" , "ten",
+                    "eleven" , "twelve" , "thirteen" ,"fourteen" , "fiftenn" , "sixteen" , "seventeen" ,"eighteen" , "ninteen",
+                    "twenty" , "twentyone" , "twentytwo" , "twentythree" , "twentyfour" ,  "twentyfive" , "twentysix" , "twentyseven",
+                    "twentyeight" , "twentynine" , "thirty" , "thirtyone" , "thirtytwo"]
+
 colorTemp = `<div class="color">
         <span class="color-item"  onclick="changeColor(this)" style="background-color:white"></span>
         <span class="color-item"  onclick="changeColor(this)" style="background-color:#f8b6a8"></span>
@@ -28,6 +34,10 @@ $(".test").mouseleave(
 function changeColor(e) {
     var c = $(e).css("background-color");
     $(e).parent().parent().children("img").css("background-color", c)
+    console.log($(e).parent().parent().children("img").id);
+    for(var i = 0 ; i < 100000000000 ; i++){
+
+    }
 }
 
 function save() {
