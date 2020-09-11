@@ -10,7 +10,6 @@
                     <tr >
                         <th>Patient Name</th>
                         <th>mobile Number</th>
-                        <th>time</th>
                         <th>status</th>
                     </tr>
                 </thead>
@@ -21,8 +20,7 @@
                     <tr style="background-color:darkgreen">
                         <td >{{$booking->patient->name}} </td>
                         <td>{{$booking->patient->mobile}}</td>
-                        <td>{{ $booking->created_at}}</td>
-                      <td><button class="btn btn-danger" >@if($booking->commit==1)cancel @else confirmed @endif</button></td>
+                      <td><button onclick="changeCommit('{{$booking->id}}')" class="btn <?php if($booking->commit == 1) {echo ("btn-danger");}else{echo ("btn-primary");}   ?>"> @if($booking->commit==1)cancel @else confirmed @endif</button></td>
                       
                     </tr>
                     @endforeach   
