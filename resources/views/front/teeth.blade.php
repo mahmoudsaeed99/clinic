@@ -103,104 +103,104 @@
         <form method="GET" class="container-fluid teethOperator">
             <div class="row d-flex justify-content-center mb-5">
 
-                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color:'{{$upper->one}}'">
-                    <img src="{{asset('images/1.png')}}" id="1" class="img w-100" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px;  ">
+                    <img src="{{asset('images/1.png')}}" id="1" class="img w-100" style="background-color: <?php echo($upper->one) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height:40px; background-color: '{{$upper->two}}';">
-                    <img src="{{asset('images/2.png')}}" id="2" class="img w-100" alt="">
+                <div class="m-1 test" style="width: 4.5%; height:40px;">
+                    <img src="{{asset('images/2.png')}}" id="2" class="img w-100" style="background-color: <?php echo($upper->two)?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$upper->three}}';">
-                    <img src="{{asset('images/3.png')}}" id="3" class="img w-100" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="{{asset('images/3.png')}}" id="3" class="img w-100" style="background-color: <?php echo($upper->three) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$upper->four}}'; ">
-                    <img src="{{asset('images/4.png')}}" id="4" class="img w-100" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px;  ">
+                    <img src="{{asset('images/4.png')}}" id="4" class="img w-100" style="background-color: <?php echo($upper->four) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$upper->five}}'; ">
-                    <img src="{{asset('images/5.png')}}" id="5" class="img" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px;  ">
+                    <img src="{{asset('images/5.png')}}" id="5" class="img" style="background-color: <?php echo($upper->five) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$upper->six}}'; ">
-                    <img src="{{asset('images/6.png')}}" id="6" class="img" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px;  ">
+                    <img src="{{asset('images/6.png')}}" id="6" class="img" style="background-color: <?php echo($upper->six) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$upper->seven}}'; ">
-                    <img src="{{asset('images/7.png')}}" id="7" class="img" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px;  ">
+                    <img src="{{asset('images/7.png')}}" id="7" class="img" style="background-color: <?php echo($upper->seven) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$upper->eight}}'; ">
-                    <img src="{{asset('images/8.png')}}" id="8" class="img" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px;  ">
+                    <img src="{{asset('images/8.png')}}" id="8" class="img" style="background-color: <?php echo($upper->eight) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px;  background-color: '{{$upper->nine}}';">
-                    <img src="{{asset('images/9.png')}}" id="9" class="img" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px;  ">
+                    <img src="{{asset('images/9.png')}}" id="9" class="img" style="background-color: <?php echo($upper->nine) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$upper->ten}}'; ">
-                    <img src="{{asset('images/10.png')}}" id="10" class="img" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px;  ">
+                    <img src="{{asset('images/10.png')}}" id="10" class="img" style="background-color: <?php echo($upper->ten) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$upper->eleven}}'; ">
-                    <img src="{{asset('images/11.png')}}" id="11" class="img" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px;  ">
+                    <img src="{{asset('images/11.png')}}" id="11" class="img" style="background-color: <?php echo($upper->eleven) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$upper->twelve}}'; ">
-                    <img src="{{asset('images/12.png')}}" id="12" class="img" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px;  ">
+                    <img src="{{asset('images/12.png')}}" id="12" class="img" style="background-color: <?php echo($upper->twelve) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$upper->thirteen}}'; ">
-                    <img src="{{asset('images/13.png')}}" id="13" class="img" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px;  ">
+                    <img src="{{asset('images/13.png')}}" id="13" class="img" style="background-color: <?php echo($upper->thirteen) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$upper->fourteen}}'; ">
-                    <img src="{{asset('images/14.png')}}" id="14" class="img" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px;">
+                    <img src="{{asset('images/14.png')}}" id="14" style="background-color:<?php echo ($upper->fourteen)?> ;" class="img" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px;  background-color: '{{$upper->fifteen}}';">
-                    <img src="{{asset('images/15.png')}}" id="15" class="img" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px;  ">
+                    <img src="{{asset('images/15.png')}}" id="15" class="img" style="background-color: <?php echo($upper->fifteen) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$upper->sixteen}}'; ">
-                    <img src="{{asset('images/16.png')}}" id="16" class="img" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="{{asset('images/16.png')}}" id="16" class="img" style="background-color: <?php echo($upper->sixteen) ?>;" alt="">
                 </div>
             </div>
             <div class="row d-flex justify-content-center mb-5 " style="margin-top: 105px;">
 
                 <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$lower->seventeen}}'; ">
-                    <img src="{{asset('images/17.png')}}" class="img" id="17" alt="">
+                    <img src="{{asset('images/17.png')}}" class="img" id="17" style="background-color: <?php echo($lower->seventeen) ?>;" alt="">
                 </div>
                 <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$lower->eighteen}}'; ">
-                    <img src="{{asset('images/18.png')}}" class="img" id="18" alt="">
+                    <img src="{{asset('images/18.png')}}" class="img" id="18" style="background-color: <?php echo($lower->eighteen)?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$lower->nineteen}}'; ">
-                    <img src="{{asset('images/19.png')}}" class="img" id="19" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="{{asset('images/19.png')}}" class="img" id="19" style="background-color: <?php echo($lower->nineteen) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$lower->twenty}}'; ">
-                    <img src="{{asset('images/20.png')}}" class="img" id="20" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px;">
+                    <img src="{{asset('images/20.png')}}" class="img" id="20" style="background-color: <?php echo($lower->twenty) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$lower->twentyone}}'; ">
-                    <img src="{{asset('images/21.png')}}" class="img" id="21" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="{{asset('images/21.png')}}" class="img" id="21" style="background-color: <?php echo($lower->twentyone) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$lower->twentytwo}}'; ">
-                    <img src="{{asset('images/22.png')}}" class="img" id="22" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px;">
+                    <img src="{{asset('images/22.png')}}" class="img" id="22" style="background-color: <?php echo($lower->twentytwo) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$lower->twentythree}}'; ">
-                    <img src="{{asset('images/23.png')}}" class="img" id="23" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px ">
+                    <img src="{{asset('images/23.png')}}" class="img" id="23" style="background-color: <?php echo($lower->twentythree) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px;  background-color: '{{$lower->twentyfour}}';">
-                    <img src="{{asset('images/24.png')}}" class="img" id="24" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px;">
+                    <img src="{{asset('images/24.png')}}" class="img" id="24" style="background-color: <?php echo($lower->twentyfour) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px;  background-color: '{{$lower->twentyfive}}';">
-                    <img src="{{asset('images/25.png')}}" class="img" id="25" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px;">
+                    <img src="{{asset('images/25.png')}}" class="img" id="25" style="background-color: <?php echo($lower->twentyfive) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$lower->twentysix}}'; ">
-                    <img src="{{asset('images/26.png')}}" class="img" id="26" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="{{asset('images/26.png')}}" class="img" id="26" style="background-color: <?php echo($lower->twentysix) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px;  background-color: '{{$lower->twentyseven}}';">
-                    <img src="{{asset('images/27.png')}}" class="img" id="27" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px ">
+                    <img src="{{asset('images/27.png')}}" class="img" id="27" style="background-color: <?php echo($lower->twentyseven) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$lower->twentyeight}}'; ">
-                    <img src="{{asset('images/28.png')}}" class="img" id="28" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px;">
+                    <img src="{{asset('images/28.png')}}" class="img" id="28" style="background-color: <?php echo($lower->twentyeight) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$lower->twentynine}}'; ">
-                    <img src="{{asset('images/29.png')}}" class="img" id="29" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="{{asset('images/29.png')}}" class="img" id="29" style="background-color: <?php echo($lower->twentynine) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$lower->thirty}}'; ">
-                    <img src="{{asset('images/30.png')}}" class="img" id="30" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="{{asset('images/30.png')}}" class="img" id="30" style="background-color: <?php echo($lower->thirty) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px;  background-color: '{{$lower->thirtyone}}';">
-                    <img src="{{asset('images/31.png')}}" class="img" id="31" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px;">
+                    <img src="{{asset('images/31.png')}}" class="img" id="31" style="background-color: <?php echo($lower->thirtyone) ?>;" alt="">
                 </div>
-                <div class="m-1 test" style="width: 4.5%; height: 40px; background-color: '{{$lower->thirtytwo}}'; ">
-                    <img src="{{asset('images/32.png')}}" class="img" id="32" alt="">
+                <div class="m-1 test" style="width: 4.5%; height: 40px; ">
+                    <img src="{{asset('images/32.png')}}" class="img" id="32" style="background-color: <?php echo($lower->thirtytwo) ?>;" alt="">
                 </div>
             </div>
 

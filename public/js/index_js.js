@@ -34,10 +34,26 @@ $(".test").mouseleave(
 function changeColor(e) {
     var c = $(e).css("background-color");
     $(e).parent().parent().children("img").css("background-color", c)
-    console.log($(e).parent().parent().children("img").id);
-    for(var i = 0 ; i < 100000000000 ; i++){
-
+    var id = $(e).parent().parent().children("img").attr("id");
+    var name = teethContainer[id];
+    var patient  = document.getElementById ("patientID").textContent
+    var type = ""
+    window.alert(id)
+    if(id > 16){
+        type = "lower"
     }
+    else{
+        type = "upper"
+    }
+    $.ajax({
+        type :"GET",
+        url :"http://127.0.0.1:8000/patient/change/color/"+patient+"/"+type+"/"+name+"/"+c+"",
+        data:(patient , type , name , c),
+        success: function() {
+            console.log("Value added");
+          }
+    })
+
 }
 
 function save() {
@@ -99,4 +115,16 @@ function bookDate(){
 
     }
     
+}
+
+function changeCommit(id){
+    $.ajax({
+        type :"GET",
+        url :"http://127.0.0.1:8000/admin/bookChange/"+id+"",
+        data:id,
+        success: function() {
+            window.alert("change booking");
+            location.reload();
+          }
+    })
 }
