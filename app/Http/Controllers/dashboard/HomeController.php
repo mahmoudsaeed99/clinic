@@ -127,8 +127,7 @@ class HomeController extends Controller
          'img' => 'required|image|mimes:jpeg,jpg,png'
       ]);
       $data['id'] = $request->id;
-      $newName = $data['img']->hashName();
-      Image::make($data['img'])->resize(100, 100)->save(public_path('images/uploads/' . $newName));
+      $newName = $data['img']->hashName();     
       $data['img'] = $newName;
 
       $newImg = new Images();
