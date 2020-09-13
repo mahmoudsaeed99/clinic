@@ -8,13 +8,17 @@ use App\Booking;
 use App\Patient;
 use Image;
 use App\Images;
+use App\LowerDenture;
+use App\UpperDenture;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
    public function index()
    {
-      $data['Bookings'] = Booking::select('patient_id', 'commit', 'created_at')->paginate(5);
+
+      $date = today();
+      $data['Bookings'] = Booking::select('id', 'patient_id', 'commit', 'created_at')->where('created_at' ,$date)->paginate(5);
       return view('admin.home')->with($data);
    }
    //search function
@@ -32,19 +36,30 @@ class HomeController extends Controller
    //     }
 
    // }
-   function getPatient(Request $request){
-      $data=$request->validate([
+
+   function bookChange($id)
+   {
+      $book = Booking::findorfail($id);
+      if ($book->commit == 1) {
+         $book->commit = 0;
+      } else {
+         $book->commit = 1;
+      }
+      $book->save();
+   }
+   function getPatient(Request $request)
+   {
+      $data = $request->validate([
          'search'    => 'required'
-       ]);
-       //('name','like','%'.$data['search'].'%')
-     
-   
-       $pateint = Patient::select('id')->where("mobile" ,"=", $data['search'])->orWhere("name","=",$data['search'])->get();
+      ]);
+      //('name','like','%'.$data['search'].'%')
+
+
+      $pateint = Patient::select('id')->where("mobile", "=", $data['search'])->orWhere("name", "=", $data['search'])->get();
       //  dd( $pateint);
-       if($pateint->count() > 0){
-         return redirect('/patient/profile/'.$pateint[0]->id.'');
-       }
-       else{
+      if ($pateint->count() > 0) {
+         return redirect('/patient/profile/' . $pateint[0]->id . '');
+      } else {
 
          return redirect('admin/get/patient/form');
       }
@@ -75,10 +90,33 @@ class HomeController extends Controller
       $patient->allergy = $data['allergy'];
       $patient->bleed = $data['bledding'];
       $patient->totalMoney = 0;
-      $patient->paidMoney = 0;
       $patient->note = $data['note'];
       $patient->save();
       return redirect('admin/home');
+   }
+   function create_lower_dentures($patientID)
+   {
+      $lower  = new LowerDenture();
+      $lower->patient_id = $patientID;
+      for ($i = 16; $i < 33; $i++) {
+         $lower->$i = "";
+      }
+   }
+   function create_upper_dentures($patientID)
+   {
+      $upper  = new UpperDenture();
+      $upper->patient_id = $patientID;
+      for ($i = 16; $i < 33; $i++) {
+         $upper->$i = "";
+      }
+   }
+   function changeTeethColor($patient_id, $type, $teethName, $color)
+   {
+      if ($type == "upper") {
+         UpperDenture::where('patient_id', $patient_id)->update([$teethName => $color]);
+      } else {
+         LowerDenture::where('patient_id', $patient_id)->update([$teethName => $color]);
+      }
    }
    function patientProfile($id)
    {
@@ -105,14 +143,15 @@ class HomeController extends Controller
       $newImg->patient_id = $request->id;
       $newImg->img = $data['img'];
       $newImg->save();
-      
+
       return back();
    }
    function showTeeth($id)
    {
       $patient['patient'] = Patient::findorfail($id);
+      $patient['upper'] = UpperDenture::where('patient_id', $id)->first();
+      $patient['lower'] = LowerDenture::where('patient_id', $id)->first();
       return view('front.teeth')->with($patient);
-
    }
    function addPatientService($pateint_id, $service_id)
    {
@@ -132,22 +171,18 @@ class HomeController extends Controller
       $book->commit = 0;
       $book->created_at = $date;
       $book->save();
-      
-
-
    }
-   function calculation(Request $request){
-      $data=$request->validate([
-         'totalMoney'=>'required|numeric'
-      
+   function calculation(Request $request)
+   {
+      $data = $request->validate([
+         'totalMoney' => 'required|numeric'
+
       ]);
       $oldTotalMoney = Patient::findorfail($request->id)->totalMoney;
-      $data['id']=$request->id;
-      $data['totalMoney']=$oldTotalMoney-$data['totalMoney'];
-   
-     Patient::findorfail($request->id)->update($data);
-     return back();
+      $data['id'] = $request->id;
+      $data['totalMoney'] = $oldTotalMoney - $data['totalMoney'];
 
-
+      Patient::findorfail($request->id)->update($data);
+      return back();
    }
 }

@@ -1,8 +1,6 @@
-
-
 @extends('front.layout.front')
 @section('title')
-    images
+images
 @endsection
 @section('buttons')
 <li class="nav-item active">
@@ -14,107 +12,101 @@
 </li>
 <li class="nav-item active">
     <a class="nav-link" href="{{url('patient/images/'.$patient->id)}}">images <span class="sr-only">(current)</span></a>
-</li> 
+</li>
 @endsection
 @section('content')
 @section('nav')
 <h3 style="display: none;" id="patientID">{{$patient->id}}</h3>
 <div class="col-md-8">
 
-                <div class="row " style="background-color: teal;">
-                    <div class="col-md-3">
-                        <img src="images/—Pngtree—baby teeth_3355819.png" class="w-50">
-                    </div>
-                    <div class="col-md-9 mt-5" style="color: white;">
-                        <div class="row mb-3">
+    <div class="row " style="background-color: teal;">
+        <div class="col-md-3">
+            <img src="images/—Pngtree—baby teeth_3355819.png" class="w-50">
+        </div>
+        <div class="col-md-9 mt-5" style="color: white;">
+            <div class="row mb-3">
 
-                            <label for="" class="col-md-1">Name:</label>
-                            <label for="" class="col-md-5">{{$patient->name}}</label>
-                            <label for="" class="col-md-1">age:</label>
-                            <label for="" class="col-md-5">{{$patient->age}}</label>
-                            <label for="" class="col-md-1">mobile:</label>
-                            <label for="" class="col-md-5">{{$patient->mobile}}</label>
-                            <label for="" class="col-md-2">heart :</label>
-                            <label for="" class="col-md-4">
-                                @if($patient->heart == 1)
-                                    yes
-                                @else
-                                    no
-                                
-                                @endif</label>
-                            <label for="" class="col-md-2">diabetes :</label>
-                            <label for="" class="col-md-4">
-                                @if($patient->diabetes == 1)
-                                    yes
-                                @else
-                                    no
-                                
-                                @endif</label>
-                            <label for="" class="col-md-2">allergy :</label>
-                            <label for="" class="col-md-4">
-                                @if($patient->allergy == 1)
-                                    yes
-                                @else
-                                    no
-                                
-                                @endif</label>
-                            <label for="" class="col-md-2">	bleed :</label>
-                            <label for="" class="col-md-4">
-                                @if($patient->bleed == 1)
-                                    yes
-                                @else
-                                    no
-                                
-                                @endif</label>
-                            <label for="" class="col-md-2">	note :</label>
-                            <label for="" class="col-md-4">
-                                {{$patient->note}}</label>
-                        </div>
-                    </div>
-                </div>
-                
+                <label for="" class="col-md-1">Name:</label>
+                <label for="" class="col-md-5">{{$patient->name}}</label>
+                <label for="" class="col-md-1">age:</label>
+                <label for="" class="col-md-5">{{$patient->age}}</label>
+                <label for="" class="col-md-1">mobile:</label>
+                <label for="" class="col-md-5">{{$patient->mobile}}</label>
+                <label for="" class="col-md-2">heart :</label>
+                <label for="" class="col-md-4">
+                    @if($patient->heart == 1)
+                    yes
+                    @else
+                    no
 
-@endsection
-@section('addImage')
-<nav class="navbar navbar-light bg-light">
-    @include('front.inc.errors')
-    <ul class="navbar-nav">
-        <form action="{{url('patient/addImages')}}" method="post" enctype="multipart/form-data">
-            @csrf
-        <li class="nav-item">
-        <input type="hidden" name="id" value="{{$patient->id}}">
-        <input class="form-control-file" type="file" name="img">
-        </li>
-        <input class="btn btn-info" type="submit" value="submit">
-    </form>
- 
-    </ul>
-</nav>   
-@endsection
+                    @endif</label>
+                <label for="" class="col-md-2">diabetes :</label>
+                <label for="" class="col-md-4">
+                    @if($patient->diabetes == 1)
+                    yes
+                    @else
+                    no
 
-<div class="container">
-    @foreach ($patient->images as $item)
-        
-            <img class="imgList" src="{{asset('images/uploads/'.$item->img)}}" alt="">
-           
-       
-            @endforeach
+                    @endif</label>
+                <label for="" class="col-md-2">allergy :</label>
+                <label for="" class="col-md-4">
+                    @if($patient->allergy == 1)
+                    yes
+                    @else
+                    no
 
-       
-        <div class="display d-flex justify-content-center">
-<<<<<<< Updated upstream
-            <img src="{{asset('images/uploads/test.png')}}" class="w-25 imgDis" alt="">
-=======
-            <img src="{{asset('images/uploads/'.$patient->images[0]->img)}}" class="w-25 imgDis" alt="">
->>>>>>> Stashed changes
+                    @endif</label>
+                <label for="" class="col-md-2"> bleed :</label>
+                <label for="" class="col-md-4">
+                    @if($patient->bleed == 1)
+                    yes
+                    @else
+                    no
+
+                    @endif</label>
+                <label for="" class="col-md-2"> note :</label>
+                <label for="" class="col-md-4">
+                    {{$patient->note}}</label>
             </div>
+        </div>
     </div>
-   
+
+
+    @endsection
+    @section('addImage')
+    <nav class="navbar navbar-light bg-light">
+        @include('front.inc.errors')
+        <ul class="navbar-nav">
+            <form action="{{url('patient/addImages')}}" method="post" enctype="multipart/form-data">
+                @csrf
+                <li class="nav-item">
+                    <input type="hidden" name="id" value="{{$patient->id}}">
+                    <input class="form-control-file" type="file" name="img">
+                </li>
+                <input class="btn btn-info" type="submit" value="submit">
+            </form>
+
+        </ul>
+    </nav>
+    @endsection
+
+    <div class="container">
+        @foreach ($patient->images as $item)
+
+        <img class="imgList" src="{{asset('images/uploads/'.$item->img)}}" alt="">
+
+
+        @endforeach
+
+
+        <div class="display d-flex justify-content-center">
+            <img src="{{asset('images/uploads/test.png')}}" class="w-25 imgDis" alt="">
+
+        </div>
+    </div>
+
 
     <!-- </div> -->
 
 
-@endsection
-
-
-
+    @endsection

@@ -1,3 +1,9 @@
+
+var teethContainer = ["" , "one" , "two", "three" , "four" , "five" , "six" , "seven" , "eight" , "nine" , "ten",
+                    "eleven" , "twelve" , "thirteen" ,"fourteen" , "fiftenn" , "sixteen" , "seventeen" ,"eighteen" , "ninteen",
+                    "twenty" , "twentyone" , "twentytwo" , "twentythree" , "twentyfour" ,  "twentyfive" , "twentysix" , "twentyseven",
+                    "twentyeight" , "twentynine" , "thirty" , "thirtyone" , "thirtytwo"]
+
 colorTemp = `<div class="color">
         <span class="color-item"  onclick="changeColor(this)" style="background-color:white"></span>
         <span class="color-item"  onclick="changeColor(this)" style="background-color:#f8b6a8"></span>
@@ -28,6 +34,26 @@ $(".test").mouseleave(
 function changeColor(e) {
     var c = $(e).css("background-color");
     $(e).parent().parent().children("img").css("background-color", c)
+    var id = $(e).parent().parent().children("img").attr("id");
+    var name = teethContainer[id];
+    var patient  = document.getElementById ("patientID").textContent
+    var type = ""
+    window.alert(id)
+    if(id > 16){
+        type = "lower"
+    }
+    else{
+        type = "upper"
+    }
+    $.ajax({
+        type :"GET",
+        url :"http://127.0.0.1:8000/patient/change/color/"+patient+"/"+type+"/"+name+"/"+c+"",
+        data:(patient , type , name , c),
+        success: function() {
+            console.log("Value added");
+          }
+    })
+
 }
 
 function save() {
@@ -89,4 +115,16 @@ function bookDate(){
 
     }
     
+}
+
+function changeCommit(id){
+    $.ajax({
+        type :"GET",
+        url :"http://127.0.0.1:8000/admin/bookChange/"+id+"",
+        data:id,
+        success: function() {
+            window.alert("change booking");
+            location.reload();
+          }
+    })
 }
