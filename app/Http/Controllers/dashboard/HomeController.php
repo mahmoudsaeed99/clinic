@@ -21,21 +21,7 @@ class HomeController extends Controller
       $data['Bookings'] = Booking::select('id', 'patient_id', 'commit', 'created_at')->where('created_at' ,$date)->paginate(5);
       return view('admin.home')->with($data);
    }
-   //search function
-
-   // function getPatient(Request $request){
-   //    $data=$request->validate([
-   //       'search'    => 'required|regex:/(0)[0-9]{9}/'
-   //     ]);
-   //     $pateint = Patient::select('id')->where('mobile' ,"=", $data['search'])->get();
-   //     if($pateint->count() > 0){
-   //       return redirect('/patient/profile/'.$pateint[0]->id.'');
-   //     }
-   //     else{
-   //       return redirect('admin/get/patient/form');
-   //     }
-
-   // }
+  
 
    function bookChange($id)
    {
@@ -141,8 +127,7 @@ class HomeController extends Controller
          'img' => 'required|image|mimes:jpeg,jpg,png'
       ]);
       $data['id'] = $request->id;
-      $newName = $data['img']->hashName();
-      // Images::make($data['img'])->resize(100, 100)->save(public_path('images/uploads/' . $newName));
+      $newName = $data['img']->hashName();     
       $data['img'] = $newName;
 
       $newImg = new Images();
