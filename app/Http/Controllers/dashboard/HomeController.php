@@ -86,22 +86,6 @@ class HomeController extends Controller
       $upper->save();
       return redirect('admin/home');
    }
-   function create_lower_dentures($patientID)
-   {
-      $lower  = new LowerDenture();
-      $lower->patient_id = $patientID;
-      for ($i = 16; $i < 33; $i++) {
-         $lower->$i = "";
-      }
-   }
-   function create_upper_dentures($patientID)
-   {
-      $upper  = new UpperDenture();
-      $upper->patient_id = $patientID;
-      for ($i = 16; $i < 33; $i++) {
-         $upper->$i = "";
-      }
-   }
    function changeTeethColor($patient_id, $type, $teethName, $color)
    {
       if ($type == "upper") {
@@ -127,9 +111,9 @@ class HomeController extends Controller
          'img' => 'required|image|mimes:jpeg,jpg,png'
       ]);
       $data['id'] = $request->id;
-      $newName = $data['img']->hashName();     
+      $newName = $data['img']->hashName();
+      Image::make($data['img'])->resize(100, 100)->save(public_path('images/uploads/' . $newName));     
       $data['img'] = $newName;
-
       $newImg = new Images();
       $newImg->patient_id = $request->id;
       $newImg->img = $data['img'];
