@@ -142,7 +142,7 @@ class HomeController extends Controller
       ]);
       $data['id'] = $request->id;
       $newName = $data['img']->hashName();
-      Images::make($data['img'])->resize(100, 100)->save(public_path('images/uploads/' . $newName));
+      // Images::make($data['img'])->resize(100, 100)->save(public_path('images/uploads/' . $newName));
       $data['img'] = $newName;
 
       $newImg = new Images();
