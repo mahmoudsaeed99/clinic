@@ -92,6 +92,12 @@ class HomeController extends Controller
       $patient->totalMoney = 0;
       $patient->note = $data['note'];
       $patient->save();
+      $lower  = new LowerDenture();
+      $lower->patient_id = $patient->id;
+      $lower->save();
+      $upper  = new UpperDenture();
+      $upper->patient_id = $patient->id;
+      $upper->save();
       return redirect('admin/home');
    }
    function create_lower_dentures($patientID)
