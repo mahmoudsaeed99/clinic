@@ -85,7 +85,7 @@ class HomeController extends Controller
       $upper->patient_id = $patient->id;
       $upper->save();
       return redirect('admin/home');
-      
+
    }
   
    function changeTeethColor($patient_id, $type, $teethName, $color)
@@ -114,9 +114,8 @@ class HomeController extends Controller
       ]);
       $data['id'] = $request->id;
       $newName = $data['img']->hashName();
-      Image::make($data['img'])->resize(100, 100)->save(public_path('images/uploads/' . $newName));
+      Image::make($data['img'])->resize(100, 100)->save(public_path('images/uploads/' . $newName));     
       $data['img'] = $newName;
-
       $newImg = new Images();
       $newImg->patient_id = $request->id;
       $newImg->img = $data['img'];
