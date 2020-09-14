@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="{{asset('css/index.css')}}">
 </head>
 
-<body class="bg-light">
-    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: violet;">
+<body class="" style="background-color: #9eb3c2 ;">
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #21295c;">
         <a class="navbar-brand" href="{{url('admin/home')}}">DashBoard</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>

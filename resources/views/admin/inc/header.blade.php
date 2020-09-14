@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="{{asset('css/index.css')}}">
 </head>
 
-<body class="bg-dark">
-    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: violet;">
+<body class="" style="background-color: #0a1128;">
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #4b5842;">
         <a class="navbar-brand" href="{{url('admin/home')}}">DashBoard</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
@@ -34,7 +34,7 @@
             <form class="form-inline my-2 my-lg-0" method="post" , action="{{url('admin/get/patient')}}">
                 @csrf
                 <input class="form-control mr-sm-2" name = "search" type="text" placeholder="patient name">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
     </nav>

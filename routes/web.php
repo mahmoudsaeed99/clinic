@@ -13,12 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::namespace('dashboard')->group(function () {
+Route::namespace('dashboard')->prefix('admin')->group(function () {
     Route::get('/login', 'AuthController@adminLogin');
     Route::post('/loginHandle', 'AuthController@adminHandelLogin');
     //  Route::middleware('adminAuth:admin')->group(function () {
        
-         Route::group(['prefix' => 'admin', 'middleware' => 'adminAuth:admin'], function () {
+        //  Route::group(['prefix' => 'admin', 'middleware' => 'adminAuth:admin'], function () {
           
             Route::get('/service', 'ServiceController@allServices');
             Route::post('/service/add', 'ServiceController@addService');
@@ -31,7 +31,7 @@ Route::namespace('dashboard')->group(function () {
             Route::get('/bookChange/{id}', 'HomeController@bookChange');
             Route::post('/logout', 'AuthController@logout');
         // });
-    });
+    // });
   
 });
 Route::namespace('dashboard')->prefix('patient')->group(function () {
@@ -44,5 +44,6 @@ Route::namespace('dashboard')->prefix('patient')->group(function () {
     Route::get('/add/money/{patient_id}/{price}', 'HomeController@addMoney');
     Route::get('/bookDate/{patient_id}/{Date}', 'HomeController@bookingDate');
     Route::post('/calculation', 'HomeController@calculation');
+    Route::get('/delete/service/{service_id}/{patient_id}/{price}', 'HomeController@deletePatientService');
     Route::get('/change/color/{patient_id}/{type}/{teethName}/{color}', 'HomeController@changeTeethColor');
 });

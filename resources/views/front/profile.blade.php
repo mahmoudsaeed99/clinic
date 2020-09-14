@@ -19,7 +19,7 @@ profile
 @section('nav')
 <h3 style="display: none;" id="patientID">{{$patient->id}}</h3>
 <div class="col-md-8">
-    <div class="row " style="background-color: teal;">
+    <div class="row " style="background-color: #065a82;">
         <div class="col-md-3">
             <img src="images/—Pngtree—baby teeth_3355819.png" class="w-50">
         </div>
@@ -75,8 +75,8 @@ profile
 @endsection
 @if($patient->totalMoney !=0)
 <div class="container m-3 ">
-<h3>Remaining Money</h3>
-<h6>{{$patient->totalMoney}} Egyptian pound</h6>
+    <h3>Remaining Money</h3>
+    <h6>{{$patient->totalMoney}} Egyptian pound</h6>
     <form action="{{url('patient/calculation')}}" method="post">
         @csrf
         <input type="hidden" name="id" class="w-50" value="{{$patient->id}}">
@@ -85,22 +85,23 @@ profile
         <input class="btn btn-info" type="submit" value="submit">
     </form>
 </div>
-@endif   
-    <table class="table">
+@endif
+<div class="d-flex justify-content-center">
+    <table class="table w-50">
         <thead>
             <tr>
                 <th>service</th>
                 <th>price</th>
-                <th>time</th>
+                <th>delete</th>
                 <!-- <th>paid</th> -->
             </tr>
         </thead>
         <tbody>
-        @foreach($patient->services as $service)
+            @foreach($patient->services as $service)
             <tr>
-              <td scope="row">{{$service->name}} </td>
+                <td scope="row">{{$service->name}} </td>
                 <td>{{$service->price}}</td>
-                <td>{{$service->pivot->created_at}}</td>
+                <td><button class="btn btn-danger" onclick="deleteService('{{$service->id}}' , '{{$patient->id}}' , '{{$service->price}}')">delete</button></td>
    
             </tr>
             @endforeach
@@ -108,5 +109,5 @@ profile
 
     </table>
 
-
+    </div>
     @endsection
