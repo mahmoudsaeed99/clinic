@@ -13,26 +13,29 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <body>
-    <div class="wrapper fadeInDown">
+    <!-- <div class="wrapper fadeInDown">
     <div id="formContent">
-        <!-- Tabs Titles -->
+        Tabs Titles -->
 
         <!-- Icon -->
-        <div class="fadeIn first">
+        <!-- <div class="fadeIn first">
             <img src="{{asset('images/—Pngtree—baby teeth_3355819.png')}}" id="icon" alt="User Icon" />
-        </div>
+        </div> -->
 
         <!-- Login Form -->
-        <form method="POST"action="{{url('/loginHandle')}}"> 
+        <!-- <form method="POST"action="{{url('/loginHandle')}}"> 
             @csrf
             <input type="text" id="login" class="fadeIn second" name="name" placeholder="login">
+          
             <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+            <br>
+            <br>
             <input type="submit" class="fadeIn fourth" value="Log In">
         </form>
 
     </div>
-</div>
-    {{-- <div class="wrapper fadeInDown">
+</div>  -->
+   <div class="wrapper fadeInDown">
         @include('admin.inc.errors')
         
         <div id="formContent">
@@ -44,14 +47,15 @@
             </div>
            
             <!-- Login Form -->
-        <form method="POST"action="{{url('admin/loginHandle')}}"> 
+        <form method="POST"action="{{url('/loginHandle')}}"> 
             @csrf
                 <input type="text" id="login" class="fadeIn second" name="name" placeholder="login">
-                <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
+                <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
                 <input type="submit" class="fadeIn fourth" value="Log In">
             </form>
 
-        </div> --}}
+        </div> 
+        </div> 
    
 <!-- 
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

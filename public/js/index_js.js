@@ -38,6 +38,7 @@ function changeColor(e) {
     var name = teethContainer[id];
     var patient  = document.getElementById ("patientID").textContent
     var type = ""
+
     if(id > 16){
         type = "lower"
     }

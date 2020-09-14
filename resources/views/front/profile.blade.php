@@ -96,15 +96,14 @@ profile
             </tr>
         </thead>
         <tbody>
+        @foreach($patient->services as $service)
             <tr>
-                <td scope="row"></td>
-                <td></td>
-                <td></td>
-                <!-- <form>
-            <td><input type="number"name="paid"placeholder="enter paid amount"></td>
-            </form> -->
+              <td scope="row">{{$service->name}} </td>
+                <td>{{$service->price}}</td>
+                <td>{{$service->pivot->created_at}}</td>
+   
             </tr>
-
+            @endforeach
         </tbody>
 
     </table>

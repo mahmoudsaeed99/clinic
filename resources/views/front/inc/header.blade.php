@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
+    <link rel="icon" href="{{asset('images/icon.png')}}">
     <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/index.css')}}">
@@ -25,6 +26,12 @@
 
 
             </ul>
+            <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{{url('/login')}}">logout </a>
+      </li>
+     
+    </ul>
             <form class="form-inline my-2 my-lg-0" method="post" , action="{{url('admin/get/patient')}}">
                 @csrf
                 <input class="form-control mr-sm-2" name = "search" type="text" placeholder="patient name">
