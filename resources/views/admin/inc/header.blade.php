@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
+    <link rel="icon" href="{{asset('images/icon.png')}}">
     <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/index.css')}}">
@@ -20,10 +21,13 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="{{url('admin/service')}}">operations <span class="sr-only">(current)</span></a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{url('admin/get/patient/form')}}">new patient <span class="sr-only">(current)</span></a>
+                </li>
             </ul>
             <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="{{url('/')}}">logout </a>
+        <a class="nav-link" href="{{url('/login')}}">logout </a>
       </li>
      
     </ul>
