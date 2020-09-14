@@ -85,7 +85,9 @@ class HomeController extends Controller
       $upper->patient_id = $patient->id;
       $upper->save();
       return redirect('admin/home');
+
    }
+  
    function changeTeethColor($patient_id, $type, $teethName, $color)
    {
       if ($type == "upper") {
@@ -96,8 +98,8 @@ class HomeController extends Controller
    }
    function patientProfile($id)
    {
-      $patient['patient'] = Patient::findorfail($id);
-      // dd($patient);
+      $patient['patient'] = Patient::with('services')->findorfail($id);
+         //  dd($patient);
       return view('front.profile')->with($patient);
    }
    function images($id)
@@ -132,6 +134,8 @@ class HomeController extends Controller
    {
       DB::insert('insert into patient_service (patient_id, service_id) values (?, ?)', [$pateint_id, $service_id]);
    }
+  
+
    function addMoney($pateint_id, $price)
    {
       $pateint = Patient::findorfail($pateint_id);
@@ -161,3 +165,4 @@ class HomeController extends Controller
       return back();
    }
 }
+   
