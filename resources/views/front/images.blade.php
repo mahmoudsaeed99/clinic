@@ -19,7 +19,7 @@ images
 <h3 style="display: none;" id="patientID">{{$patient->id}}</h3>
 <div class="col-md-8">
 
-    <div class="row " style="background-color: teal;">
+    <div class="row " style="background-color: #065a82;">
         <div class="col-md-3">
             <img src="images/—Pngtree—baby teeth_3355819.png" class="w-50">
         </div>

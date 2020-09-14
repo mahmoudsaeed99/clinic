@@ -21,7 +21,7 @@
 
 <h3 style="display: none;" id="patientID">{{$patient->id}}</h3>
 <div class="col-md-8">
-    <div class="row " style="background-color: teal;">
+    <div class="row " style="background-color: #065a82;">
         <div class="col-md-3">
             <img src="images/—Pngtree—baby teeth_3355819.png" class="w-50">
         </div>
@@ -99,7 +99,7 @@
         <div class="d-flex justify-content-center m-2"
             style=" width: 100px;background-color:#FF1493; height: 25px; color: white;">Extraction 11</div>
     </div>
-    <div class="container-fluid mt-3">
+    <div class="container-fluid mt-3 ">
         <form method="GET" class="container-fluid teethOperator">
             <div class="row d-flex justify-content-center mb-5">
 
