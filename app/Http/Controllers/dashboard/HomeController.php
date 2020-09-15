@@ -87,7 +87,15 @@ class HomeController extends Controller
       return redirect('admin/home');
 
    }
-  
+  function deletePatientService($service_id , $patient_id , $price){
+   DB::table('patient_service')
+                ->where('patient_id', $patient_id)
+                ->where('service_id',$service_id)
+                ->delete();
+   $patient = Patient::findorfail($patient_id);
+   $patient->totalMoney = $patient->totalMoney - $price;
+   $patient->save(); 
+  }
    function changeTeethColor($patient_id, $type, $teethName, $color)
    {
       if ($type == "upper") {

@@ -32,6 +32,7 @@
 }
 .teethOperator{
     background-color: rgb(246, 246, 246);
+    height: 300px;
 }   
 @media (max-width: 1100px){
   
