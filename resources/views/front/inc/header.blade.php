@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="{{asset('css/index.css')}}">
 </head>
 
-<body class="" style="background-color: #9eb3c2 ;">
-    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #21295c;">
+<body class="" style="background-color: #fffffc;">
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #5066C6;">
         <a class="navbar-brand" href="{{url('admin/home')}}">DashBoard</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
@@ -48,7 +48,7 @@
                {{-- @yield('image') --}}
                
                 <button class="btn btn-primary w-100 " id="operation"> operation</button>
-                <div class="operator" style="display: none;">
+                <div class="operator" style="display: none; ">
                     <table class="table table-striped table-inverse table-responsive">
                         <thead class="thead-inverse">
                             <tr>
