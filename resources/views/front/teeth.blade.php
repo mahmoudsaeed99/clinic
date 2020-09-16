@@ -21,10 +21,10 @@
 
 <h3 style="display: none;" id="patientID">{{$patient->id}}</h3>
 <div class="col-md-8">
-    <div class="row " style="background-color: #065a82;">
-        <div class="col-md-3">
+    <div class="p-3 mb-2  text-white " style="background-color: #4ea8de;">
+        <!-- <div class="col-md-3">
             <img src="images/—Pngtree—baby teeth_3355819.png" class="w-50">
-        </div>
+        </div> -->
         <div class="col-md-9 mt-5" style="color: white;">
             <div class="row mb-3">
 

@@ -4,10 +4,10 @@ home
 @endsection('title')
 @section('content')
 <div class="container">
-    <form class="mt-3 bg-dark p-4 rounded" style="color: cornsilk;" action="{{url('admin/service/add')}}" method="post">
+    <form class="mt-3 p-4 rounded " style="background-color:#8db1ab;" action="{{url('admin/service/add')}}" method="post">
         @csrf
         <div class="form-group">
-            <label for="exampleInputEmail1">service</label>
+            <label for="exampleInputEmail1" >service</label>
             <input type="text" name="name" class="form-control operation" id="operation" aria-describedby="emailHelp" placeholder="operation">
         </div>
         <div class="form-group">
@@ -16,9 +16,9 @@ home
         </div>
         <button type="submit" name="add" class="btn btn-primary">Add</button>
     </form>
-</div>  
+ 
 <div class="d-flex justify-content-center mt-3">
-    <table class="table w-50 " style="background-color: #8db1ab;">
+    <table class="table " style="background-color: #8db1ab;">
         <thead class="thead-inverse">
             <tr>
                 <th>#</th>
@@ -46,8 +46,9 @@ home
             @endforeach
         </tbody>
     </table>
+    
 </div>
-
+</div> 
 <div class="d-flex justify-content-center width-100">
     {!! $services->render() !!}
 </div>
