@@ -71,7 +71,7 @@ function deleteService(){
         url :"http://127.0.0.1:8000/admin/service/delete/"+id+"",
         data:id,
         success: function() {
-            console.log("Value added");
+            console.log("service deleted");
           }
     })
     

@@ -19,6 +19,7 @@ class HomeController extends Controller
 
       $date = today();
       $data['Bookings'] = Booking::select('id', 'patient_id', 'commit', 'created_at')->where('created_at' ,$date)->paginate(5);
+      //   dd($date);
       return view('admin.home')->with($data);
    }
   
