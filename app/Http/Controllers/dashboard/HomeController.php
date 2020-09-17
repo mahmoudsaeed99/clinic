@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Booking;
 use App\Patient;
 use Image;
-use App\Images;
+use App\images;
 use App\LowerDenture;
 use App\UpperDenture;
 use Illuminate\Support\Facades\DB;
@@ -79,12 +79,38 @@ class HomeController extends Controller
       $patient->note = $data['note'];
       $patient->save();
       $lower  = new LowerDenture();
-      $lower->patient_id = $patient->id;
+
+      $lower->patient_id = $patientID;
+      $teeth=["" , "one" , "two", "three" , "four" , "five" , "six" , "seven" , "eight" , "nine" , "ten",
+                    "eleven" , "twelve" , "thirteen" ,"fourteen" , "fiftenn" , "sixteen" , "seventeen" ,"eighteen" , "ninteen",
+                    "twenty" , "twentyone" , "twentytwo" , "twentythree" , "twentyfour" ,  "twentyfive" , "twentysix" , "twentyseven",
+                    "twentyeight" , "twentynine" , "thirty" , "thirtyone" , "thirtytwo"];
+
+      for ($i = 17; $i < 33; $i++) {
+         $lower->$teeth[$i] = "rgb(0,0,0)";
+      }
       $lower->save();
+   }
+   function create_upper_dentures($patientID)
+   {
+      $teeth=["" , "one" , "two", "three" , "four" , "five" , "six" , "seven" , "eight" , "nine" , "ten",
+      "eleven" , "twelve" , "thirteen" ,"fourteen" , "fiftenn" , "sixteen" , "seventeen" ,"eighteen" , "ninteen",
+      "twenty" , "twentyone" , "twentytwo" , "twentythree" , "twentyfour" ,  "twentyfive" , "twentysix" , "twentyseven",
+      "twentyeight" , "twentynine" , "thirty" , "thirtyone" , "thirtytwo"];
       $upper  = new UpperDenture();
-      $upper->patient_id = $patient->id;
+      $upper->patient_id = $patientID;
+      for ($i = 1; $i < 17; $i++) {
+         $upper->$teeth[$i] = "rgb(0,0,0)";
+      }
+      $upper ->save();
+
+      $upper->patient_id = $patientID->id;
+      $upper->save();
+      $upper  = new UpperDenture();
+      $upper->patient_id = $patientID->id;
       $upper->save();
       return redirect('admin/home');
+
 
    }
   function deletePatientService($service_id , $patient_id , $price){
@@ -122,13 +148,17 @@ class HomeController extends Controller
       ]);
       $data['id'] = $request->id;
       $newName = $data['img']->hashName();
-      Image::make($data['img'])->resize(100, 100)->save(public_path('images/uploads/' . $newName));     
+
+      Image::make($data['img'])->resize(100, 100)->save(public_path('images/uploads/' . $newName));
+  
+
       $data['img'] = $newName;
       $newImg = new Images();
       $newImg->patient_id = $request->id;
       $newImg->img = $data['img'];
       $newImg->save();
-
+      // dd($data);
+      // Images::create($data);
       return back();
    }
    function showTeeth($id)
