@@ -28,6 +28,7 @@
 .boxStyle{
     padding: 20px; 
     border-radius: 25px; 
+    /* background-color:#C0D6E4; */
     border-top: 6px solid #dc3545;
     border-bottom: 6px solid #28a745;
 }

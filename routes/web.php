@@ -13,12 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::namespace('dashboard')->prefix('admin')->group(function () {
+Route::namespace('dashboard')->group(function () {
     Route::get('/login', 'AuthController@adminLogin');
     Route::post('/loginHandle', 'AuthController@adminHandelLogin');
     //  Route::middleware('adminAuth:admin')->group(function () {
        
-        //  Route::group(['prefix' => 'admin', 'middleware' => 'adminAuth:admin'], function () {
+          Route::group(['prefix' => 'admin'], function () {
           
             Route::get('/service', 'ServiceController@allServices');
             Route::post('/service/add', 'ServiceController@addService');
@@ -29,11 +29,20 @@ Route::namespace('dashboard')->prefix('admin')->group(function () {
             Route::get('/get/patient/form', 'HomeController@getPatientForm');
             Route::post('/get/patient/register', 'HomeController@patientRegister');
             Route::get('/bookChange/{id}', 'HomeController@bookChange');
+    
+    });
+ 
+
+
+ 
+        
+   
             Route::post('/logout', 'AuthController@logout');
-        // });
-    // });
+        });
+   
   
-});
+
+
 Route::namespace('dashboard')->prefix('patient')->group(function () {
     Route::get('/images/{id}', 'HomeController@images');
     Route::post('/addImages', 'HomeController@addImage');
