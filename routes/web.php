@@ -41,4 +41,26 @@ Route::namespace('dashboard')->group(function () {
         Route::post('/calculation', 'HomeController@calculation');
         Route::get('/change/color/{patient_id}/{type}/{teethName}/{color}', 'HomeController@changeTeethColor');
     });
+
+
+
+    
+//    });
+//    Route::prefix('patient')->group(function(){
+//        Route::get('/images/{id}','HomeController@images');
+//        Route::post('/addImages','HomeController@addImage');
+//        Route::get('/profile/{id}','HomeController@patientProfile');
+//        Route::get('/teeth/{id}','HomeController@showTeeth');
+
+//        Route::get('/add/service/{patient_id}/{service_id}','HomeController@addPatientService');
+//        Route::get('/add/money/{patient_id}/{price}','HomeController@addMoney');
+//        Route::get('/bookDate/{patient_id}/{Date}','HomeController@bookingDate');
+
+//        Route::post('/calculation','HomeController@calculation');
+
+//    });
+    
+  
+        
+   
 });

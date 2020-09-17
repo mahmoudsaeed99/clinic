@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Booking;
 use App\Patient;
 use Image;
-use App\Images;
+use App\images;
 use App\LowerDenture;
 use App\UpperDenture;
 use Illuminate\Support\Facades\DB;
@@ -21,21 +21,7 @@ class HomeController extends Controller
       $data['Bookings'] = Booking::select('id', 'patient_id', 'commit', 'created_at')->where('created_at' ,$date)->paginate(5);
       return view('admin.home')->with($data);
    }
-   //search function
-
-   // function getPatient(Request $request){
-   //    $data=$request->validate([
-   //       'search'    => 'required|regex:/(0)[0-9]{9}/'
-   //     ]);
-   //     $pateint = Patient::select('id')->where('mobile' ,"=", $data['search'])->get();
-   //     if($pateint->count() > 0){
-   //       return redirect('/patient/profile/'.$pateint[0]->id.'');
-   //     }
-   //     else{
-   //       return redirect('admin/get/patient/form');
-   //     }
-
-   // }
+  
 
    function bookChange($id)
    {
@@ -98,17 +84,28 @@ class HomeController extends Controller
    {
       $lower  = new LowerDenture();
       $lower->patient_id = $patientID;
-      for ($i = 16; $i < 33; $i++) {
-         $lower->$i = "";
+      $teeth=["" , "one" , "two", "three" , "four" , "five" , "six" , "seven" , "eight" , "nine" , "ten",
+                    "eleven" , "twelve" , "thirteen" ,"fourteen" , "fiftenn" , "sixteen" , "seventeen" ,"eighteen" , "ninteen",
+                    "twenty" , "twentyone" , "twentytwo" , "twentythree" , "twentyfour" ,  "twentyfive" , "twentysix" , "twentyseven",
+                    "twentyeight" , "twentynine" , "thirty" , "thirtyone" , "thirtytwo"];
+
+      for ($i = 17; $i < 33; $i++) {
+         $lower->$teeth[$i] = "rgb(0,0,0)";
       }
+      $lower->save();
    }
    function create_upper_dentures($patientID)
    {
+      $teeth=["" , "one" , "two", "three" , "four" , "five" , "six" , "seven" , "eight" , "nine" , "ten",
+      "eleven" , "twelve" , "thirteen" ,"fourteen" , "fiftenn" , "sixteen" , "seventeen" ,"eighteen" , "ninteen",
+      "twenty" , "twentyone" , "twentytwo" , "twentythree" , "twentyfour" ,  "twentyfive" , "twentysix" , "twentyseven",
+      "twentyeight" , "twentynine" , "thirty" , "thirtyone" , "thirtytwo"];
       $upper  = new UpperDenture();
       $upper->patient_id = $patientID;
-      for ($i = 16; $i < 33; $i++) {
-         $upper->$i = "";
+      for ($i = 1; $i < 17; $i++) {
+         $upper->$teeth[$i] = "rgb(0,0,0)";
       }
+      $upper ->save();
    }
    function changeTeethColor($patient_id, $type, $teethName, $color)
    {
@@ -136,14 +133,15 @@ class HomeController extends Controller
       ]);
       $data['id'] = $request->id;
       $newName = $data['img']->hashName();
-      Images::make($data['img'])->resize(100, 100)->save(public_path('images/uploads/' . $newName));
+      Image::make($data['img'])->resize(100, 100)->save(public_path('images/uploads/' . $newName));
       $data['img'] = $newName;
 
       $newImg = new Images();
       $newImg->patient_id = $request->id;
       $newImg->img = $data['img'];
       $newImg->save();
-
+      // dd($data);
+      // Images::create($data);
       return back();
    }
    function showTeeth($id)
