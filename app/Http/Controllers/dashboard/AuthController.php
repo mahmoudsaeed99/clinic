@@ -28,6 +28,6 @@ class AuthController extends Controller
   public function logout(){
     //using Auth() helper function to avoid making use Auth
     Auth()->guard('admin')->logout();
-    return redirect('/');
+    return redirect('admin/login');
 }
 }

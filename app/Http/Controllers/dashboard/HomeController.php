@@ -78,11 +78,8 @@ class HomeController extends Controller
       $patient->totalMoney = 0;
       $patient->note = $data['note'];
       $patient->save();
-      return redirect('admin/home');
-   }
-   function create_lower_dentures($patientID)
-   {
       $lower  = new LowerDenture();
+
       $lower->patient_id = $patientID;
       $teeth=["" , "one" , "two", "three" , "four" , "five" , "six" , "seven" , "eight" , "nine" , "ten",
                     "eleven" , "twelve" , "thirteen" ,"fourteen" , "fiftenn" , "sixteen" , "seventeen" ,"eighteen" , "ninteen",
@@ -106,7 +103,25 @@ class HomeController extends Controller
          $upper->$teeth[$i] = "rgb(0,0,0)";
       }
       $upper ->save();
+
+      $upper->patient_id = $patientID->id;
+      $upper->save();
+      $upper  = new UpperDenture();
+      $upper->patient_id = $patientID->id;
+      $upper->save();
+      return redirect('admin/home');
+
+
    }
+  function deletePatientService($service_id , $patient_id , $price){
+   DB::table('patient_service')
+                ->where('patient_id', $patient_id)
+                ->where('service_id',$service_id)
+                ->delete();
+   $patient = Patient::findorfail($patient_id);
+   $patient->totalMoney = $patient->totalMoney - $price;
+   $patient->save(); 
+  }
    function changeTeethColor($patient_id, $type, $teethName, $color)
    {
       if ($type == "upper") {
@@ -117,8 +132,8 @@ class HomeController extends Controller
    }
    function patientProfile($id)
    {
-      $patient['patient'] = Patient::findorfail($id);
-      // dd($patient);
+      $patient['patient'] = Patient::with('services')->findorfail($id);
+         //  dd($patient);
       return view('front.profile')->with($patient);
    }
    function images($id)
@@ -133,9 +148,11 @@ class HomeController extends Controller
       ]);
       $data['id'] = $request->id;
       $newName = $data['img']->hashName();
-      Image::make($data['img'])->resize(100, 100)->save(public_path('images/uploads/' . $newName));
-      $data['img'] = $newName;
 
+      Image::make($data['img'])->resize(100, 100)->save(public_path('images/uploads/' . $newName));
+  
+
+      $data['img'] = $newName;
       $newImg = new Images();
       $newImg->patient_id = $request->id;
       $newImg->img = $data['img'];
@@ -155,6 +172,8 @@ class HomeController extends Controller
    {
       DB::insert('insert into patient_service (patient_id, service_id) values (?, ?)', [$pateint_id, $service_id]);
    }
+  
+
    function addMoney($pateint_id, $price)
    {
       $pateint = Patient::findorfail($pateint_id);
@@ -184,3 +203,4 @@ class HomeController extends Controller
       return back();
    }
 }
+   

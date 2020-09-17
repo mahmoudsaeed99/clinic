@@ -38,7 +38,7 @@ function changeColor(e) {
     var name = teethContainer[id];
     var patient  = document.getElementById ("patientID").textContent
     var type = ""
-    window.alert(id)
+
     if(id > 16){
         type = "lower"
     }
@@ -124,6 +124,19 @@ function changeCommit(id){
         data:id,
         success: function() {
             window.alert("change booking");
+            location.reload();
+          }
+    })
+}
+
+function deleteService(serviceId , patientId , price){
+    price = Number(price);
+    $.ajax({
+        type :"GET",
+        url :"http://127.0.0.1:8000/patient/delete/service/"+serviceId+"/"+patientId+"/"+price+"",
+        data:(serviceId , patientId , price),
+        success: function() {
+            window.alert("service deleted");
             location.reload();
           }
     })

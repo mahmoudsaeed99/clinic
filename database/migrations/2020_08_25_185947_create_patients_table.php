@@ -19,7 +19,7 @@ class CreatePatientsTable extends Migration
             $table->integer("age");
             $table->integer("totalMoney");
             $table->string("mobile");
-            $table->text("note");
+            $table->text("note")->nullable();;
             $table->boolean("heart");
             $table->boolean("diabetes");
             $table->boolean("allergy");

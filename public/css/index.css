@@ -32,10 +32,19 @@
 }
 .teethOperator{
     background-color: rgb(246, 246, 246);
+    height: 300px;
 }   
 @media (max-width: 1100px){
   
     .teethOperator{
         display: none;
     }   
+}
+.operator{
+    margin:4px, 4px; 
+    padding:4px; 
+    height: 200px; 
+    overflow-x: hidden; 
+    overflow-y: auto; 
+    text-align:justify;     
 }
