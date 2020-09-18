@@ -13,28 +13,7 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <body>
-    <!-- <div class="wrapper fadeInDown">
-    <div id="formContent">
-        Tabs Titles -->
-
-        <!-- Icon -->
-        <!-- <div class="fadeIn first">
-            <img src="{{asset('images/—Pngtree—baby teeth_3355819.png')}}" id="icon" alt="User Icon" />
-        </div> -->
-
-        <!-- Login Form -->
-        <!-- <form method="POST"action="{{url('/loginHandle')}}"> 
-            @csrf
-            <input type="text" id="login" class="fadeIn second" name="name" placeholder="login">
-          
-            <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
-            <br>
-            <br>
-            <input type="submit" class="fadeIn fourth" value="Log In">
-        </form>
-
-    </div>
-</div>  -->
+    
    <div class="wrapper fadeInDown">
         @include('admin.inc.errors')
         
@@ -49,8 +28,8 @@
             <!-- Login Form -->
         <form method="POST"action="{{url('/loginHandle')}}"> 
             @csrf
-                <input type="text" id="login" class="fadeIn second" name="name" placeholder="login">
-                <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+                <input type="text" id="login" class="fadeIn second" name="name" placeholder="name">
+                <input type="password" id="login" class="fadeIn third" name="password" placeholder="password">
                 <input type="submit" class="fadeIn fourth" value="Log In">
             </form>
 

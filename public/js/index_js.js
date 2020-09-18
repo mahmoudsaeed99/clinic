@@ -63,8 +63,8 @@ function save() {
         console.log(c);
     }
 }
-function deleteService(){
-    var id  = document.getElementById ( "id" ).innerText
+function delete_Service(id){
+    var id  = document.getElementById ( "id"+id ).innerText
     console.log(id)
     $.ajax({
         type :"GET",
