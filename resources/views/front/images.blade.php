@@ -99,8 +99,8 @@ images
         @endforeach
 
 
-        <div class="display d-flex justify-content-center">
-            <img src="{{asset('images/uploads/test.png')}}" class="w-25 imgDis" alt="">
+        <div class="display d-flex  justify-content-center">
+            <img src="{{asset('images/uploads/test.png')}}" class="w-75  imgDis " alt="">
 
         </div>
     </div>

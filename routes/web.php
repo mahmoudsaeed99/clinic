@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::namespace('dashboard')->group(function () {
-    Route::get('/login', 'AuthController@adminLogin');
+    Route::get('/', 'AuthController@adminLogin');
     Route::post('/loginHandle', 'AuthController@adminHandelLogin');
     //  Route::middleware('adminAuth:admin')->group(function () {
        
